@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pie Chart Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="myChart"></canvas>
+
+    <script>
+        
+        // Get the data from the server
+        fetch('/api/data')
+            .then(response => response.json())
+            .then(data => {
+                // Extract the data and labels from the response
+                const chartData = data.data;
+                const chartLabels = data.labels;
+
+                // Create the pie chart
+               
+                const myChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: chartLabels,
+                        datasets: [{
+                            data: chartData,
+                            backgroundColor: ['#FF6384', '#36A2EB'], // Custom colors for the pie slices
+                        }]
+                    }
+                });
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  K A L A W A K A N - E learning</title>
+    <link rel="stylesheet" href="/robot.css">
+    <style>
+                @font-face {
+  font-family: "myfont";
+  src: url("modern\ M.ttf");}
+        body{
+  font-family:Roboto;
+  background:#000000;  
+  font-family: "myfont";              
+}
+
+.transition {
+  transition: all 0.2s linear;
+}
+
+.perspective_container {
+  margin-top:2%;
+  position:relative;
+  perspective: 1000px; 
+  perspective-origin: center center;
+  position:relative;
+  max-width:500px;
+  width:90%;
+}
+
+.table {
+  width:100%;
+  backdrop-filter: blur(15px);
+  box-shadow: rgba(255, 0, 0, 0.408) 0px 5px 15px;
+    border: 3px solid rgba(213, 213, 213, 0.719);
+  border-radius:15px; 
+  transform:rotateX(25deg) rotateZ(0deg) rotateY(0deg);
+  height: 270px;
+  text-align: center;
+}
+
+.screen{
+    display: flex;
+position: relative;
+
+    width: 900px;
+    position:relative;
+  perspective: 1000px; 
+  perspective-origin: center center;
+  animation: floats 3s ease-in-out infinite;
+    height: 400px;
+}
+@keyframes floats {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -8px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.screen1{
+    position: relative;
+    top:10%;
+    height: 330px;
+    width: 490px;
+
+    border-radius: 10px;
+  transform: rotateY(35deg);
+  transform-style: preserve-3d;
+  backdrop-filter: blur(1px);
+color: aqua;
+
+}
+
+input{
+    position: relative;
+    bottom: 30;
+    height: 45px;
+    width: 200px;
+    background: none;
+   border: none;
+    border-bottom: 2px solid #ff5f5fc7;
+    font-size: 17px;
+    margin-top: 10px;
+}
+input[type="text"],[type="password"]{
+text-align: center;
+  color: #e7e7e7;
+ 
+}
+.screen2{
+
+    border-radius: 10px;
+    height: 360px;
+    width: 230px;
+    backdrop-filter: blur(1px);
+    transform: rotateY(-45deg);
+  transform-style: preserve-3d;
+position: relative;
+top:10%;
+    margin-left: 90px;
+}
+table {
+      border-collapse: collapse;
+      width: 400px;
+      
+    }
+    th {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid #dddddda3;
+      color:  rgb(26, 145, 213);
+      text-align: center;
+    }
+    td{
+        padding: 8px;
+      text-align: left;
+      text-align: center;
+     
+      color: #ddd;
+    }
+    h1{
+        color: #ffffff;
+    }
+    #num{
+        font-size: 90px;
+        font-weight: bold;
+        color:  rgb(26, 145, 213);
+    }
+    
+button{
+    margin-top: 10px;
+  border: 0.5vw rgb(255, 0, 0) dashed;
+  /* border-style: ; */
+  background-color: transparent;
+  border-radius: 50%;
+ position: absolute;
+  bottom: 8vw;
+  right: 8vw;
+  width: 3.5vw;
+  height: 3.5vw;
+  opacity: 0.8;
+  font-size: 3vw;
+  animation: spin 10s linear infinite;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 20px;
+  margin-right: 16px;
+}
+button:hover
+{
+  background-color: rgb(122, 0, 0) ;
+  cursor: pointer;
+}
+@keyframes blink-animation {
+  0% { visibility: hidden; }
+  50% { visibility: hidden; }
+  100% { visibility: visible; }
+}
+
+@keyframes spin
+{
+  0% { transform: rotate(0deg) translateZ(2vw);}
+  100% { transform: rotate(360deg) translateZ(2vw);}
+}
+
+@keyframes blinks {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+    </style>
+   
+     <link rel="icon" type="image/x-icon" href="/i.png">
+    <link rel="stylesheet" href="/star.css">
+</head>
+<body>
+  <div class="bg"></div>
+
+  <div class="star-field">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    </div>
+
+
+
+
+
+
+<center>
+
+<div class="screen">
+    <div class="screen1">
+        <h1 style="color:red;animation: blink-animation 0.7s step-start infinite;filter: drop-shadow( 10px 10px 10px rgba(255, 43, 0, 0.971));">Outsider <span style="color:rgb(255, 230, 0);animation: blink-animation 0.7s step-start infinite;">Alert!!!</span></h1>
+       <p id="typing-text" style="text-indent: 19px;font-size: 21px;color: #ddd;text-align:center;margin-top: 60px;filter: drop-shadow( 10px 10px 10px rgba(59, 138, 255, 0.696));"></p>
+    <p style="position: absolute;right: 0;margin-right: 30px;color: rgba(33, 180, 243, 0.73);">- Robot</p>
+    <img src="/light.png" style="height:150px;width:200px;position: relative;top: -30px;animation: blinks .01s infinite;">
+    </div><div class="screen2">
+        <div class="con">
+            <label for="switch-button">
+            <div class="switch">
+            
+            </div>
+            </label>
+          <div class="face"></div>
+          <div class="head"></div>
+         
+          <label for="fly-button">
+          <div class="body"><p style="color:#000;">R O B O T</p></div>
+          </label>
+          <div class="left-hand"></div>
+          <div class="right-hand"></div>
+          <div class="eye1"></div>
+          <div class="eye2"></div>
+          <div class="fly-wave">
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          </div></div> 
+    </div>
+</div>
+
+    
+    
+        <div class="perspective_container">
+         <div class="table"><form method="POST" action="/insert">
+            <input type="text" placeholder="Fullname" name="name">  <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <p style="color: #828282;font-size: 24px;margin-top: 90px;filter: drop-shadow( 10px 10px 10px rgba(255, 59, 59, 0.696))">K A L A W A K A N</p>
+            <button type="submit" ></button><p style="color: #e7e7e7;text-align: end;margin-right: 20px;">Submit</p></form>
+          </div>
+       
+         </div>  
+        </div>
+       </center>
+
+       <audio id="backgroundMusic" autoplay loop>
+ 
+        <source src="/alarm.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <audio id="voice" autoplay>
+ 
+        <source src="/greetings.m4a" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+       <script>
+         const text = "Greetings! We're thrilled to have you join our intergalactic community as an new learner. Registering an account with us will unlock a universe of exciting features and exclusive content. Just fill up the form with your correct credentials. > <" ;
+const typingTextElement = document.getElementById("typing-text");
+
+function typeText() {
+  let index = 0;
+  const typingInterval = setInterval(() => {
+    typingTextElement.textContent += text[index];
+    index++;
+
+    if (index >= text.length) {
+      clearInterval(typingInterval);
+    }
+  }, 60);
+}
+
+typeText();
+
+const backgroundMusic = document.getElementById("backgroundMusic");
+const backgroundMusic1 = document.getElementById("voice");
+// Function to play the background music
+function playBackgroundMusic() {
+  backgroundMusic.play();
+
+}
+
+// Add event listeners for user interactions
+document.addEventListener("click", playBackgroundMusic);
+document.addEventListener("keydown", playBackgroundMusic);
+       </script>
+</body>
+</html>

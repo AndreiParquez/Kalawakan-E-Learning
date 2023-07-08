@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .vidcards{
+        display: flex;
+        width: 800px;
+        margin-top: 30px;
+        
+    }
+    .text{
+        background-color: aqua;
+        height: 200px;
+        width: 500px;
+    }
+    .img{
+        background-color: blue;
+        height: 200px;
+        width: 500px;
+    }
+    </style>
+</head>
+<body>
+    <div class="search" style="text-align: center;">
+    <input type="text" id="search-input" placeholder="Search by title">
+    <button onclick="filterDivs()">Search</div>
+
+        <div class="cardcontainer" style="margin-left: 20%;">
+            <div class="vidcards" data-title="Abs">
+                <div class="con" style="width: 700px; display: flex;">
+              <div class="text"><h1>Abs</h1></div><div class="img"></div>
+            </div></div>
+           
+                <div class="vidcards" data-title="Biceps">
+                    <div class="con" style="width: 700px; display: flex;">
+                  <div class="text"><h1>Biceps</h1></div><div class="img"></div>
+                </div></div>
+      
+</div>
+            <script>
+                 function filterDivs() {
+  var searchInput = document.getElementById('search-input').value.toLowerCase();
+  var vidCards = document.getElementsByClassName('vidcards');
+
+  for (var i = 0; i < vidCards.length; i++) {
+    var videoTitle = vidCards[i].getAttribute('data-title').toLowerCase();
+    var cardContainer = vidCards[i];
+    
+    if (videoTitle.includes(searchInput)) {
+      cardContainer.style.display = 'block';
+    } else {
+      cardContainer.style.display = 'none';
+    }
+  }
+}
+            </script>
+</body>
+</html>

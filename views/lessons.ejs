@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> K A L A W A K A N - E learning</title>
+  <style>
+@font-face {
+    font-family: "myfont";
+    src: url("/modern\ M.ttf");
+  }
+  body{
+    background-color: #070110;
+  }
+  .con{
+    height: 160px;
+    width: 250px;
+   margin-left: 30px;
+   margin-right: -40px;
+  display: block;
+    transform: translate(-50%, -50%);
+  animation: floats 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px #000000a8) drop-shadow(0 0 15px #070707ab);
+
+   }
+   .main-content table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .main-content th {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+    font-size: 17px;
+    font-weight: 100;
+    white-space: nowrap;
+  }
+  .main-content td {
+    padding: 9px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    background-color: rgba(0, 128, 255, 0.044);
+  }
+  .main-content tr:hover{
+    background-color: #dddddd22;
+  }
+  .main-content a{
+    color: #fdfeff;
+  text-decoration: none;
+  position: relative;
+  bottom: 6px;
+  left: 17px;
+   
+  }
+  .main-content a img{
+    position: relative;
+    bottom: -6px;
+  }
+  .main-content th:nth-child(1), .main-content td:nth-child(1) {
+    width: 50%;
+
+
+  }
+
+  .main-content th:nth-child(2), .main-content td:nth-child(2) {
+    width: 1%;
+    text-align: center;
+  }
+
+  .main-content th:nth-child(3), .main-content td:nth-child(3) {
+    width: 5%;
+    text-align: justify;
+  }
+  .main-content th:nth-child(3){
+text-align: justify;
+  }
+
+  .main-content td img{
+    height: 25px;
+    margin-left: 10px;
+  }
+  .main-content img{
+    height: 25px;
+  }
+
+
+
+td img{
+  position: relative;
+
+}
+input{
+  color: #f1f1f1;
+  height: 45px;
+  width: 350px;
+  position: relative;
+  left: 30%;
+  border-radius: 25px;
+  border: 2px solid rgb(196, 196, 196);
+  text-align: center;
+  font-size: 16px;
+  background-color: rgba(0, 128, 255, 0.044);
+}
+input::placeholder{
+  text-align: center;
+  font-size: 16px;
+}
+button{
+  color: #070110;
+  height: 48px;
+  width: 48px;
+  position: relative;
+  left: 31%;
+  border-radius: 50%;
+  border: 3px solid rgb(3, 147, 249);
+  top: 7px;
+  border: 2px solid rgb(196, 196, 196);
+  background-color: rgba(0, 128, 255, 0.044);
+}
+button:hover{
+  background-color: #ddd;
+  transform: scale(1.1);
+  transition: .6s;
+}
+
+  </style>
+
+ <link rel="icon" type="image/x-icon" href="/i.png">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/cursor.css">
+    
+</head>
+<body>  <audio id="backgroundMusic" autoplay loop volume="0">
+  <source src="/bg.mp3" type="audio/mpeg" volume="0">
+  Your browser does not support the audio element.
+</audio>
+<audio id="backgroundMusi" autoplay volume="0" >
+  <source src="/pdf.m4a" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+  <div class="bg"></div>
+
+  <div class="star-field">
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  </div>
+
+
+
+    <div class="sidebar">
+      <div class="logo"></div>
+        <div class="side">
+            
+        <ul>
+          <li><a href="/dashboard"><img src="/home.svg">Home</a></li>
+          <li ><a href="/courses"><img src="/note.svg">Courses</a></li>
+          <li  class="active"><a href="/lessons"><img src="/p.svg">Resources</a></li>
+          <li><a href="/solar"><img src="/planet.svg">Models</a></li>
+          <li><a href="/act"><img src="/galaxy-svgrepo-com.svg">Activities</a></li>   
+          <li><a href="/quiz"><img src="/pen-.svg">Quiz</a></li>
+          
+          <li><a href="/videos"><img src="/video.svg">Videos</a></li>
+          <li><a href="/dev"><img src="/team.svg">Devs</a></li>
+      
+      
+        </ul></div>
+        <img src="/light.png" style="height:80px;width:300px;bottom:0;left:-40px;position:absolute;margin-bottom: 13px;">
+
+      </div>
+
+      <nav>
+        <div class="logo">
+          <img src="bot.png"><div class="tit">
+            <p>K A L A W A K A N <br>E - Learning Web</p>
+          </div>
+        </div>
+       <div class="account">
+      <p>Account</p><img src="/acc.svg" id="open-modal-btn">
+       </div>
+      </nav>
+
+
+      <div class="main-content">
+        <input type="text" id="search-input" placeholder="Search by title">
+  <button onclick="filterTable()"><img src="/search.svg"></button>
+  <h1 style="margin-top: 27px;">Documents/Pdfs</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Lesson</th>
+              <th>File Size</th>
+              <th>Download</th>
+            </tr>
+          </thead>
+          <tbody id="lesson-table">
+            <tr>
+              <td><img src="/pdf.svg"><a href="/sp.pdf">Lesson 1:The Solar System</a></td>
+         
+              <td>332 KB</td>
+              <td><a href="https://drive.google.com/uc?export=download&id=1D5-a-A_Tvw6vhOed2joXWLH-dVRHW5ul"><img src="/dl.svg"></a></td>
+            </tr>
+            <tr>
+              <td><img src="/pdf.svg"><a>Lesson 2:The Milky Way Galaxy</a></td>
+              <td>8 MB</td>
+              <td><a href="lesson2_download_link"><img src="/dl.svg"></a></td>
+            </tr>
+            <tr>
+              <td><img src="/pdf.svg"><a>Lesson 3:Black Holes</a></td>
+              <td>15 MB</td>
+              <td><a href="lesson3_download_link"><img src="/dl.svg"></a></td>
+            </tr>
+            <tr>
+              <td><img src="/pdf.svg"><a>Lesson 4:The Big Bang Theory</a></td>
+              <td>12 MB</td>
+              <td><a href="lesson4_download_link"><img src="/dl.svg"></a></td>
+            </tr>
+            <tr>
+              <td><img src="/pdf.svg"><a>Lesson 5:Exoplanets</a></td>
+              <td>9 MB</td>
+              <td><a href="lesson5_download_link"><img src="/dl.svg"></a></td>
+            </tr>
+            <tr>
+              <td><img src="/pdf.svg"><a>Lesson 6:Space Probes and Satellites</a></td>
+              <td>11 MB</td>
+              <td><a href="lesson6_download_link"><img src="/dl.svg"></a></td>
+            </tr>
+            <tr>
+              <td><img src="/pdf.svg"><a href="">Lesson 7:The Life Cycle of Stars</a></td>
+              <td>13 MB</td>
+              <td><a href="lesson7_download_link"><img src="/dl.svg"></a></td>
+            </tr>
+            <tr>
+              <td><img src="/pdf.svg"><a>Lesson 8:Galaxy Clusters</a></td>
+              <td>10 MB</td>
+              <td><a href="lesson8_download_link"><img src="/dl.svg"></a></td>
+            </tr>
+            <tr>
+              <td><img src="/pdf.svg"><a>Lesson 9:Space Exploration Historyv</td>
+              <td>9 MB</td>
+              <td><a href="lesson9_download_link"><img src="/dl.svg"></a></td>
+            </tr>
+            <tr>
+              <td><img src="/pdf.svg"><a>Lesson 10:Gravity and Space-Time</a></td>
+              <td>14 MB</td>
+              <td><a href="lesson10_download_link"><img src="/dl.svg"></a></td>
+            </tr>
+            <tr>
+              <td><img src="/pdf.svg"><a>Lesson 11:Asteroids and Meteoroids</a></td>
+              <td>7 MB</td>
+              <td><a href="lesson11_download_link"><img src="/dl.svg"></a></td>
+            </tr>
+            <tr>
+              <td><img src="/pdf.svg"><a>Lesson 12:Space Telescopes</a></td>
+              <td>12 MB</td>
+              <td><a href="lesson12_download_link"><img src="/dl.svg"></a></td>
+            </tr>
+            <tr>
+              <td><img src="/pdf.svg"><a>Lesson 13:The Oort Cloud</a></td>
+              <td>9 MB</td>
+              <td><a href="lesson13_download_link"><img src="/dl.svg"></a></td>
+            </tr>
+            <tr>
+              <td><img src="/pdf.svg"><a>Lesson 14:Supernovae</a></td>
+              <td>11 MB</td>
+              <td><a href="lesson14_download_link"><img src="/dl.svg"></a></td>
+            </tr>
+            <tr>
+              <td><img src="/pdf.svg"><a>Lesson 15:Space Weather</a></td>
+              <td>8 MB</td>
+              <td><a href="lesson15_download_link"><img src="/dl.svg"></a></td>
+            </tr>
+            <tr>
+              <td><img src="/pdf.svg"><a>Lesson 16:The Kuiper Belt</a></td>
+              <td>10 MB</td>
+              <td><a href="lesson16_download_link"><img src="/dl.svg"></a></td>
+            </tr>
+            <tr>
+              <td><img src="/pdf.svg"><a>Lesson 17:Dark Matter</a></td>
+              <td>13 MB</td>
+              <td><a href="lesson17_download_link"><img src="/dl.svg"></a></td>
+            </tr>
+            <tr>
+              <td><img src="/pdf.svg"><a>Lesson 18:The Drake Equatio</a></td>
+              <td>9 MB</td>
+              <td><a href="lesson18_download_link"><img src="/dl.svg"></a></td>
+            </tr>
+            <tr>
+              <td><img src="/pdf.svg"><a>Lesson 19:Space Colonization</a></td>
+              <td>12 MB</td>
+              <td><a href="lesson19_download_link"><img src="/dl.svg"></a></td>
+            </tr>
+            <tr>
+              <td><img src="/pdf.svg"><a>Lesson 20:The Search for Extraterrestrial Life</a></td>
+              <td>15 MB</td>
+              <td><a href="lesson20_download_link"><img src="/dl.svg"></a></td>
+            </tr>
+            <!-- Add more rows for the remaining lessons -->
+          </tbody>
+        </table>
+      </div>
+
+
+      
+
+          
+          
+        </div>
+        </div>
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="logout">
+              <img src="/bot.png"><div class="infos"><p>Username: Andrei</p><p>LearnerID: 12345678</p></div>
+            </div>
+            <button>LOG OUT</button> <button id="circ" type="submit" onmouseover="playSound()" > </button>
+          </div>
+          <img src="/light.png" style="height: 170px;width:520px;position: absolute;left:33%;top:51%;margin-bottom:30px;">
+        </div>
+        <br><br><br><br><br><br><br>
+
+
+
+
+     
+
+        </div>
+        
+<script>
+   var audio = document.getElementById("backgroundMusic");
+      audio.volume = 0.1;
+  function filterTable() {
+    const input = document.getElementById('search-input').value.toUpperCase();
+    const table = document.getElementById('lesson-table');
+    const rows = table.getElementsByTagName('tr');
+
+    for (let i = 0; i < rows.length; i++) {
+      const titleCell = rows[i].getElementsByTagName('td')[0];
+      if (titleCell) {
+        const title = titleCell.textContent || titleCell.innerText;
+        if (title.toUpperCase().indexOf(input) > -1) {
+          rows[i].style.display = '';
+        } else {
+          rows[i].style.display = 'none';
+        }
+      }
+    }
+  }
+</script>
+
+        <script>
+          // JavaScript to trigger the typing animation
+          var element = document.getElementById('typing-animation');
+          var triviaFacts = [
+  "The Sun is so large that approximately 1.3 million Earths could fit inside it.",
+  "Neutron stars are so dense that a teaspoon of its material would weigh billions of tons.",
+  "The largest volcano in our solar system is on Mars. It is called Olympus Mons and is about 13.6 miles (22 kilometers) high.",
+  "Saturn's rings are not solid but are made up of countless particles of ice, rock, and dust.",
+  "The Moon is gradually moving away from Earth at a rate of about 1.5 inches (3.8 centimeters) per year.",
+  "A day on Venus is longer than a year on Venus. It takes Venus about 243 Earth days to rotate on its axis, but only about 225 Earth days to orbit the Sun.",
+  "There is a black hole at the center of our Milky Way galaxy called Sagittarius A*.",
+  "The coldest known place in the universe is the Boomerang Nebula, where temperatures reach close to absolute zero.",
+  "Astronauts in space grow taller due to the absence of gravity compressing the spine.",
+  "Space is completely silent because sound waves require a medium, such as air or water, to travel through.",
+  "Jupiter has the shortest day among all the planets in our solar system. It completes one rotation in about 9.9 hours.",
+  "The Hubble Space Telescope, launched in 1990, has captured some of the most detailed images of our universe, helping astronomers make groundbreaking discoveries.",
+  "The International Space Station (ISS) is a habitable space station that orbits around the Earth and serves as a research laboratory for various scientific experiments.",
+  "Astronauts on the ISS experience around 16 sunrises and sunsets every day due to the station's fast orbit around the Earth.",
+  "The Great Red Spot is a massive storm on Jupiter that has been observed for over 300 years. It is so large that it could engulf several Earth-sized planets.",
+  "The Milky Way galaxy is estimated to contain over 100 billion stars, and it is just one of the billions of galaxies in the observable universe."
+];
+    function getRandomFact() {
+      var randomIndex = Math.floor(Math.random() * triviaFacts.length);
+      return triviaFacts[randomIndex];
+    }
+
+    var currentFact = getRandomFact();
+    var i = 0;
+    function typeWriter() {
+      if (i < currentFact.length) {
+        element.innerHTML += currentFact.charAt(i);
+        i++;
+        setTimeout(typeWriter, 80); // Delay between characters (in milliseconds)
+      } else {
+        // Wait for some time before displaying the next trivia fact
+        setTimeout(function() {
+          element.innerHTML = '';
+          currentFact = getRandomFact();
+          i = 0;
+          typeWriter();
+        }, 5500); // Delay between trivia facts (in milliseconds)
+      }
+    }
+
+    typeWriter();
+
+
+
+    const openModalBtn = document.getElementById('open-modal-btn');
+      const modal = document.getElementById('modal');
+      const closeBtn = document.querySelector('.close-btn');
+
+      // Open the modal
+      openModalBtn.addEventListener('click', () => {
+        modal.style.display = 'block';
+      });
+
+      // Close the modal when the user clicks on the close button or outside the modal
+      closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      window.addEventListener('click', (event) => {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      });
+
+
+
+     
+
+
+
+
+
+
+
+    function animateCount(target, duration, spanId) {
+      const element = document.getElementById(spanId);
+      const start = 0;
+      const increment = Math.ceil(target / (duration / 10)); // Increment value for each step of the animation
+
+      let current = start;
+
+      const timer = setInterval(() => {
+        current += increment;
+        element.textContent = current;
+
+        if (current >= target) {
+          element.textContent = target;
+          clearInterval(timer);
+        }
+      }, 10); // Adjust the interval (in milliseconds) to control the speed of the animation
+    }
+
+    // Usage example
+    animateCount(8, 2000, "count1"); // Customize the target, duration, and span ID for each animateCount call
+    animateCount(200, 2000, "count2");
+    animateCount(1283926, 2000, "count3");
+    animateCount(3875, 2000, "count4");
+    animateCount(250, 2000, "count5");
+   
+        </script>
+        <script src="/cursor.js"></script>
+        <script>
+          // Get a reference to the background music audio element
+        const backgroundMusic = document.getElementById("backgroundMusic");
+        
+        // Function to play the background music
+        function playBackgroundMusic() {
+          backgroundMusic.play();
+        }
+        
+        // Add event listeners for user interactions
+        document.addEventListener("click", playBackgroundMusic);
+        document.addEventListener("keydown", playBackgroundMusic);
+         </script>
+</body>
+</html>

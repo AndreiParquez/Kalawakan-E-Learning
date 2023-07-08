@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> K A L A W A K A N - E learning</title>
+  <style>
+@font-face {
+    font-family: "myfont";
+    src: url("/modern\ M.ttf");
+  }
+  body{
+    background-color: #070110;
+  }
+  .main-content{
+    background-image: url('/681657.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      height: 500px;
+    }
+    .start-screen,
+.score-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: -25%;
+}
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+#start-button,
+#restart {
+  font-size: 1.3em;
+  padding: 0.5em 1.8em;
+  border-radius: 0.2em;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+  background: none;
+  border: 1px solid #fff;
+  background-color: #000000b0;
+  box-shadow: rgba(2, 60, 105, 0.408) 0px 5px 15px;
+
+}
+#start-button:hover,
+#restart:hover{
+  background-color: #fff;
+  color: #000000;
+}
+#restart {
+  margin-top: 0.9em;
+}
+#display-container {
+  padding: 3.1em 1.8em;
+  width: 80%;
+  max-width: 37.5em;
+  margin: 0 auto;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 54%;
+  left: 27%;
+  border-radius: 0.6em;
+  backdrop-filter: blur(10px);
+  border: 1px solid #ffffff89;
+  background-color: #000000b0;
+  box-shadow: rgba(2, 60, 105, 0.408) 0px 5px 15px;
+}
+.header {
+  margin-bottom: 1.8em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.6em;
+  border-bottom: 0.1em solid #c0bfd2;
+}
+.timer-div {
+color: blue;
+  width: 7.5em;
+  border-radius: 1.8em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7em 1.8em;
+}
+.question {
+  margin-bottom: 1.25em;
+  font-weight: 500;
+}
+.option-div {
+  font-size: 0.9em;
+  width: 100%;
+  padding: 1em;
+  margin: 0.3em 0;
+  text-align: left;
+  outline: none;
+  background: transparent;
+  border: 1px solid #c0bfd2;
+  border-radius: 0.3em;
+}
+.option-div:disabled {
+  color: #000000;
+  cursor: not-allowed;
+}
+#next-button {
+  font-size: 1em;
+  margin-top: 1.5em;
+border: 1px solid #fff;
+  color: #ffffff;
+  padding: 0.7em 1.8em;
+  border-radius: 0.3em;
+  float: right;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
+  background: none;
+}
+.hide {
+  display: none;
+}
+.incorrect {
+  background-color: #f9727d;
+  color: #d32f2f;
+  border-color: #d32f2f;
+}
+.correct {
+  background-color: #a6ff39;
+  color: #689f38;
+  border-color: #689f38;
+}
+#user-score {
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
+  </style>
+
+ <link rel="icon" type="image/x-icon" href="/i.png">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/cursor.css">
+    
+</head>
+<body>  <audio id="backgroundMusic" autoplay loop volume="0">
+  <source src="/bg.mp3" type="audio/mpeg" volume="0">
+  Your browser does not support the audio element.
+</audio>
+
+  <div class="bg"></div>
+
+  <div class="star-field">
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  </div>
+
+
+
+    <div class="sidebar">
+      <div class="logo"></div>
+        <div class="side">
+            
+        <ul>
+          <li><a href="/dashboard"><img src="/home.svg">Home</a></li>
+          <li ><a href="/courses"><img src="/note.svg">Courses</a></li>
+          <li><a href="/lessons"><img src="/p.svg">Resources</a></li>
+          <li><a href="/solar"><img src="/planet.svg">Models</a></li>
+          <li><a href="/act"><img src="/galaxy-svgrepo-com.svg">Activities</a></li>   
+          <li  class="active"><a href="/quiz"><img src="/pen-.svg">Quiz</a></li>
+          
+          <li><a href="/videos"><img src="/video.svg">Videos</a></li>
+          <li><a href="/dev"><img src="/team.svg">Devs</a></li>
+      
+        </ul></div>
+        <img src="/light.png" style="height:80px;width:300px;bottom:0;left:-40px;position:absolute;margin-bottom: 13px;">
+
+      </div>
+
+      <nav>
+        <div class="logo">
+          <img src="bot.png"><div class="tit">
+            <p>K A L A W A K A N <br>E - Learning Web</p>
+          </div>
+        </div>
+       <div class="account">
+        <p>Account</p><img src="/acc.svg" id="open-modal-btn">
+       </div>
+      </nav>
+
+
+      <div class="main-content" style="height: 654px;">
+        <h1>Astrophysics</h1>
+      
+       
+        <p> <span style="color: rgb(0, 119, 255)">Test your knowledge about Astrophysics</span> </p>
+
+
+
+        <div class="start-screen">
+          <button id="start-button">Start</button>
+      </div>
+      <div id="display-container">
+          <div class="header">
+              <div class="number-of-count">
+                  <span class="number-of-question">1 of 3 questions</span>
+              </div>
+              <div class="timer-div">
+                  <img src="/stop.svg"
+                      width="20px" />
+                  <span class="time-left">10s</span>
+              </div>
+          </div>
+          <div id="container">
+              <!-- questions and options will be displayed here -->
+          </div>
+          <button id="next-button">Next</button>
+      </div>
+      <div class="score-container hide">
+          <div id="user-score">Demo Score</div>
+          <button id="restart">Restart</button>
+      </div>
+
+</div>
+
+        </div>
+
+
+
+
+        </div>
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="logout">
+              <img src="/bot.png"><div class="infos"><p>Username: Andrei</p><p>LearnerID: 12345678</p></div>
+            </div>
+            <button>LOG OUT</button> <button id="circ" type="submit" onmouseover="playSound()" > </button>
+          </div>
+          <img src="/light.png" style="height: 170px;width:520px;position: absolute;left:33%;top:51%;margin-bottom:30px;">
+        </div>
+        <br><br><br><br><br><br><br>
+
+
+
+
+     
+
+        </div>
+        
+<script>
+   var audio = document.getElementById("backgroundMusic");
+      audio.volume = 0.1;
+  function filterTable() {
+    const input = document.getElementById('search-input').value.toUpperCase();
+    const table = document.getElementById('lesson-table');
+    const rows = table.getElementsByTagName('tr');
+
+    for (let i = 0; i < rows.length; i++) {
+      const titleCell = rows[i].getElementsByTagName('td')[0];
+      if (titleCell) {
+        const title = titleCell.textContent || titleCell.innerText;
+        if (title.toUpperCase().indexOf(input) > -1) {
+          rows[i].style.display = '';
+        } else {
+          rows[i].style.display = 'none';
+        }
+      }
+    }
+  }
+</script>
+<script>
+
+
+    const openModalBtn = document.getElementById('open-modal-btn');
+      const modal = document.getElementById('modal');
+      const closeBtn = document.querySelector('.close-btn');
+
+      // Open the modal
+      openModalBtn.addEventListener('click', () => {
+        modal.style.display = 'block';
+      });
+
+      // Close the modal when the user clicks on the close button or outside the modal
+      closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      window.addEventListener('click', (event) => {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      });
+
+</script>
+        <script src="/cursor.js"></script>
+        <script>
+          // Get a reference to the background music audio element
+        const backgroundMusic = document.getElementById("backgroundMusic");
+        
+        // Function to play the background music
+        function playBackgroundMusic() {
+          backgroundMusic.play();
+        }
+        
+        // Add event listeners for user interactions
+        document.addEventListener("click", playBackgroundMusic);
+        document.addEventListener("keydown", playBackgroundMusic);
+         </script>
+
+<script>
+  //References
+let timeLeft = document.querySelector(".time-left");
+let quizContainer = document.getElementById("container");
+let nextBtn = document.getElementById("next-button");
+let countOfQuestion = document.querySelector(".number-of-question");
+let displayContainer = document.getElementById("display-container");
+let scoreContainer = document.querySelector(".score-container");
+let restart = document.getElementById("restart");
+let userScore = document.getElementById("user-score");
+let startScreen = document.querySelector(".start-screen");
+let startButton = document.getElementById("start-button");
+let questionCount;
+let scoreCount = 0;
+let count = 11;
+let countdown;
+
+const quizArray = [
+  {
+    id: "0",
+    question: "What is the process by which light is produced in the Sun?",
+    options: ["Nuclear Fusion", "Nuclear Fission", "Chemical Reaction", "Electromagnetic Radiation"],
+    correct: "Nuclear Fusion",
+  },
+  {
+    id: "1",
+    question: "What is the term for the explosion of a massive star at the end of its life?",
+    options: ["Supernova", "Black Hole", "Pulsar", "Nova"],
+    correct: "Supernova",
+  },
+  {
+    id: "2",
+    question: "What is the study of celestial objects and phenomena outside the Earth's atmosphere called?",
+    options: ["Astrophysics", "Cosmology", "Astronomy", "Meteorology"],
+    correct: "Astronomy",
+  },
+  {
+    id: "3",
+    question: "Which force is responsible for holding galaxies together?",
+    options: ["Gravity", "Electromagnetism", "Weak Nuclear Force", "Strong Nuclear Force"],
+    correct: "Gravity",
+  },
+  {
+    id: "4",
+    question: "What is the name given to the theoretical boundary around a black hole from which nothing can escape?",
+    options: ["Event Horizon", "Singularity", "Photon Sphere", "Cosmic Horizon"],
+    correct: "Event Horizon",
+  },
+  {
+    id: "5",
+    question: "What is the predominant element in the universe?",
+    options: ["Hydrogen", "Oxygen", "Carbon", "Helium"],
+    correct: "Hydrogen",
+  },
+  {
+    id: "6",
+    question: "What is the expansion of the universe called?",
+    options: ["Big Bang", "Dark Matter", "Inflation", "Redshift"],
+    correct: "Inflation",
+  },
+  {
+    id: "7",
+    question: "What is the name of the galaxy that contains our solar system?",
+    options: ["Milky Way", "Andromeda", "Sombrero", "Triangulum"],
+    correct: "Milky Way",
+  },
+  {
+    id: "8",
+    question: "What is the name for a star that has exhausted its nuclear fuel and collapsed under gravity?",
+    options: ["White Dwarf", "Neutron Star", "Red Giant", "Black Dwarf"],
+    correct: "Neutron Star",
+  },
+  {
+    id: "9",
+    question: "What is the term for a sudden and intense release of energy from the Sun's surface?",
+    options: ["Solar Flare", "Solar Wind", "Coronal Mass Ejection", "Solar Prominence"],
+    correct: "Solar Flare",
+  },
+];
+
+//Restart Quiz
+restart.addEventListener("click", () => {
+initial();
+displayContainer.classList.remove("hide");
+scoreContainer.classList.add("hide");
+});
+
+//Next Button
+nextBtn.addEventListener(
+"click",
+(displayNext = () => {
+    //increment questionCount
+    questionCount += 1;
+    //if last question
+    if (questionCount == quizArray.length) {
+        //hide question container and display score
+        displayContainer.classList.add("hide");
+        scoreContainer.classList.remove("hide");
+        //user score
+        userScore.innerHTML =
+            "Your score is " + scoreCount + " out of " + questionCount;
+    } else {
+        //display questionCount
+        countOfQuestion.innerHTML =
+            questionCount + 1 + " of " + quizArray.length + " Question";
+        //display quiz
+        quizDisplay(questionCount);
+        count = 11;
+        clearInterval(countdown);
+        timerDisplay();
+    }
+})
+);
+
+//Timer
+const timerDisplay = () => {
+countdown = setInterval(() => {
+    count--;
+    timeLeft.innerHTML = `${count}s`;
+    if (count == 0) {
+        clearInterval(countdown);
+        displayNext();
+    }
+}, 1000);
+};
+
+//Display quiz
+const quizDisplay = (questionCount) => {
+let quizCards = document.querySelectorAll(".container-mid");
+//Hide other cards
+quizCards.forEach((card) => {
+    card.classList.add("hide");
+});
+//display current question card
+quizCards[questionCount].classList.remove("hide");
+};
+
+//Quiz Creation
+function quizCreator() {
+//randomly sort questions
+quizArray.sort(() => Math.random() - 0.5);
+//generate quiz
+for (let i of quizArray) {
+    //randomly sort options
+    i.options.sort(() => Math.random() - 0.5);
+    //quiz card creation
+    let div = document.createElement("div");
+    div.classList.add("container-mid", "hide");
+    //question number
+    countOfQuestion.innerHTML = 1 + " of " + quizArray.length + " Question";
+    //question
+    let question_DIV = document.createElement("p");
+    question_DIV.classList.add("question");
+    question_DIV.innerHTML = i.question;
+    div.appendChild(question_DIV);
+    //options
+    div.innerHTML += `
+<button class="option-div" onclick="checker(this)">${i.options[0]}</button>
+ <button class="option-div" onclick="checker(this)">${i.options[1]}</button>
+  <button class="option-div" onclick="checker(this)">${i.options[2]}</button>
+   <button class="option-div" onclick="checker(this)">${i.options[3]}</button>
+`;
+    quizContainer.appendChild(div);
+}
+}
+
+//Checker Function to check if option is correct or not
+function checker(userOption) {
+let userSolution = userOption.innerText;
+let question =
+    document.getElementsByClassName("container-mid")[questionCount];
+let options = question.querySelectorAll(".option-div");
+
+//if user clicked answer == correct option stored in object
+if (userSolution === quizArray[questionCount].correct) {
+    userOption.classList.add("correct");
+    scoreCount++;
+} else {
+    userOption.classList.add("incorrect");
+    //For marking the correct option
+    options.forEach((element) => {
+        if (element.innerText == quizArray[questionCount].correct) {
+            element.classList.add("correct");
+        }
+    });
+}
+
+//clear interval(stop timer)
+clearInterval(countdown);
+//disable all options
+options.forEach((element) => {
+    element.disabled = true;
+});
+}
+
+//initial setup
+function initial() {
+quizContainer.innerHTML = "";
+questionCount = 0;
+scoreCount = 0;
+count = 11;
+clearInterval(countdown);
+timerDisplay();
+quizCreator();
+quizDisplay(questionCount);
+}
+
+//when user click on start button
+startButton.addEventListener("click", () => {
+startScreen.classList.add("hide");
+displayContainer.classList.remove("hide");
+initial();
+});
+
+//hide quiz and display start screen
+window.onload = () => {
+startScreen.classList.remove("hide");
+displayContainer.classList.add("hide");
+};
+</script>
+
+</body>
+</html>

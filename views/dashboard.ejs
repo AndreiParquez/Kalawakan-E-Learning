@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K A L A W A K A N - E learning</title>
+  <style>
+@font-face {
+    font-family: "myfont";
+    src: url("/modern\ M.ttf");
+  }
+  body{
+    background-color: #070110;
+  }
+  .con{
+    height: 160px;
+    width: 250px;
+   margin-left: 30px;
+   margin-right: -40px;
+  display: block;
+    transform: translate(-50%, -50%);
+  animation: floats 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px #000000a8) drop-shadow(0 0 15px #070707ab);
+
+   }
+   
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -20px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+
+  }
+  @keyframes floats {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -30px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+
+  }
+.face{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:100px;
+  margin:auto;
+  height:16px;
+  width:36px;
+  z-index:3;
+  background:rgb(3, 3, 3);
+  border-top-left-radius:20px;
+  border-top-right-radius:20px;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  transition:.3s;
+}
+.head{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:100px;
+  margin:auto;
+  height:29px;
+  width:48px;
+  background:white;
+  border-top-left-radius:60px;
+  border-top-right-radius:60px;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  transition:.3s;
+}
+.body{
+  position:absolute;
+  top:5px;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:auto;
+  height:66px;
+  width:55px;
+  background:white;
+  border-top-left-radius:20px;
+  border-top-right-radius:20px;
+  border-bottom-left-radius:100px;
+  border-bottom-right-radius:100px;
+ 
+}
+.body p{
+  text-align: center;
+  font-family: "myfont";
+  font-weight: bold;
+  font-size: 8px;
+  margin-top: 7px;
+  margin-bottom: 0;
+}
+.left-hand{
+   position:absolute;
+   top:1px;
+   left:0;
+   right:78px;
+   bottom:0;
+   margin:auto;
+   height:45px;
+   width:13px;
+   background:white;
+   border-top-left-radius:10px;
+   border-top-right-radius:10px;
+   border-bottom-left-radius:10px;
+   border-bottom-right-radius:50px;
+   transition:.3s;
+}
+.right-hand{
+  position:absolute;
+  top:1px;
+  left:78px;
+  right:0;
+  bottom:0;
+  margin:auto;
+  height:13px;
+  width:45px;
+  background:white;
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:50px;
+  transform: rotateZ(90deg);
+  transition:.3s;
+  
+}
+@keyframes hand{
+  0%{
+  transform:translateY(-40px) rotateZ(45deg);
+  } 
+  50%{
+  transform:translateY(0px) rotateZ(-0deg);
+  }
+  100%{
+  transform:translateY(-40px) rotateZ(45deg);
+  }
+  }
+.eye1{
+position:absolute;
+ top:0;
+ left:0;
+ right:15px;
+ bottom:100px;
+ margin:auto;
+ z-index:4;
+ height:4px;
+ width:6px;
+ background:repeating-linear-gradient(rgb(0, 0, 0) 70%,rgb(40, 123, 255) 80%, rgb(0, 0, 0));
+ border-top-left-radius:50px;
+ border-top-right-radius:50px;
+ border-bottom-left-radius:20px;
+ border-bottom-right-radius:20px;
+ animation:blink 1s linear 6;
+ transition:.3s;
+ display: block;
+}
+.eye2{
+position:absolute;
+ top:0;
+ left:15px;
+ right:0;
+ bottom:100px;
+ margin:auto;
+ z-index:4;
+ height:4px;
+ width:6px;
+ background:repeating-linear-gradient(rgb(0, 0, 0) 70%, rgb(40, 123, 255) 80%, rgb(0, 0, 0));
+ border-top-left-radius:50px;
+ border-top-right-radius:50px;
+ border-bottom-left-radius:20px;
+ border-bottom-right-radius:20px;
+   animation:blink 1s linear 6;
+   transition:.3s;
+}
+@keyframes blink{
+0%{
+height:5px;
+}
+25%{
+height:4px;
+}
+50%{
+height:1px;
+}
+75%{
+height:4px;
+}
+100%{
+height:5px;
+}
+}
+
+.switch{
+ position:absolute;
+ top:0px;
+ bottom:0;
+ left:0;
+ right:0;
+ margin:auto;
+ height:15px;
+ width:15px;
+ z-index:1;
+ border-radius:50%;
+ background:rgb(0, 0, 0);
+ box-shadow:0px 0px 15px rgb(153, 153, 153),
+           inset 0px 0px 15px black;
+ transition:.3s;
+ cursor:pointer;
+}
+#switch-button:checked ~ label .switch{
+ background:red;
+ box-shadow:0px 0px 15px red,
+           inset 0px 0px 15px black;
+}
+#switch-button:checked ~ .head{
+ bottom:130px;
+}
+#switch-button:checked ~ .face{
+ bottom:130px;
+}
+#switch-button:checked ~ .left-hand{
+ right:130px;
+}
+#switch-button:checked ~ .right-hand{
+ left:130px;
+}
+#switch-button:checked ~ .eye1{
+ transform:scale(0) translateY(-20px);
+}
+#switch-button:checked ~ .eye2{
+ transform:scale(0) translateY(-20px);
+}
+
+.fly-wave .wave{
+ position:absolute;
+ top:60px;
+ bottom:0;
+ left:0;
+ right:0;
+ margin:auto;
+ height:5px;
+ width:53px;
+ background:lightblue;
+ border-radius:40px;
+ box-shadow:0px 0px 1px blue,
+           inset 0px 0px 5px black;
+ animation:fly 1s linear infinite;
+ opacity:0;
+
+}
+@keyframes fly{
+ 10%{
+   transform:scale(1.1) translateY(0px);
+   opacity:1;
+ }
+ 50%{
+   transform:scale(.5) translateY(85px);
+   opacity:0;
+ }
+ 100%{
+   transform:scale(0) translateY(85px);
+   opacity:0;
+ }
+}
+.fly-wave .wave:nth-child(1){
+ animation-delay:.2s;
+}
+.fly-wave .wave:nth-child(2){
+ animation-delay:.4s;
+}
+.fly-wave .wave:nth-child(3){
+ animation-delay:.6s;
+}
+.fly-wave .wave:nth-child(4){
+ animation-delay:.8s;
+}
+#fly-button:checked ~ .fly-wave .wave{
+ display:block;
+}
+#fly-button:checked ~ .background{
+ height:100%;
+}
+#fly-button:checked ~ .left-hand{
+ right:130px;
+}
+#fly-button:checked ~ .right-hand{
+ left:130px;
+}
+.bg {
+    background: url(512724.png) no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -3;
+    filter: brightness(110%);
+  }
+  .bg:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #000;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+  }
+  @keyframes sf-fly-by-1 {
+    from {
+        transform: translateZ(-600px);
+        opacity: 0.5;
+    }
+    to {
+        transform: translateZ(0);
+        opacity: 0.5;
+    }
+  }
+  .box{
+    display:flex;
+    
+  }
+  .intro{
+    margin-top: 40px;
+    height:100%;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 19px;
+    border: 1px solid #fff;
+    padding: 10px;
+    animation: floatff 3s ease-in-out infinite;
+    width: 850px;
+    backdrop-filter: blur(2px);
+    box-shadow: rgba(0, 145, 255, 0.408) 0px 5px 15px;
+  }
+
+
+
+
+
+
+    .shrink-container {
+  height: 550px;
+
+}
+    
+body {
+  padding: 0;
+  outline: none;
+ 
+  --mercurySpeed: 2s;
+  --venusSpeed: 5.1428s;
+  --earthSpeed: 8.348s;
+  --marsSpeed: 15.7s;
+  --jupiterSpeed: 100.112s;
+  --saturnSpeed: 241.942s;
+  --uranusSpeed: 700.8s;
+  --neptuneSpeed: 1376.5714s;
+  --asteroidSpeed: 40s;
+  --orbit: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  border: none;
+}
+
+.background-image {
+  position: fixed;
+  margin-top: -2%;
+  margin-left: -2%;
+  height: 150vh;
+  z-index: -200;
+  opacity: 0.3;
+  filter: contrast(2);
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+}
+
+.header-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+  padding: 0px;
+  z-index: 200;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+}
+
+.main-heading {
+  position: relative;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 5vh;
+  text-align: center;
+  z-index: 200;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.397);
+}
+
+.credits {
+  position: relative;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2.5vh;
+  text-align: center;
+  font-weight: 0;
+  margin-top: -10px;
+  z-index: 200;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.349);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+
+
+.options {
+  position: absolute;
+  margin-top: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.637);
+}
+
+.options-mobile {
+  position: absolute;
+  margin-top: 35vh;
+  margin-left: 10%;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+  text-align: center;
+}
+
+.options-title-mobile {
+  opacity: 0;
+}
+
+.spacing {
+  position: relative;
+  width: 1vw;
+  height: 1vw;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+}
+
+.spacing-mobile {
+  position: relative;
+  width: 0;
+  height: 0;
+  padding: -20px;
+}
+
+.options-title {
+  position: relative;
+  color: white;
+  margin-left: 6vw;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 4vh;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+}
+
+.label {
+  position: relative;
+  color: white;
+  margin-left: 2%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.8vh;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+  text-align: left;
+}
+
+.showing {
+  opacity: 1;
+  transition-duration: 0.4s;
+}
+
+.hiding {
+  opacity: 0;
+  transition-duration: 0.4s;
+}
+
+.checkbox {
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  height: 20px;
+  width: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.637);
+  border-radius: 20px;
+  margin-left: 15px;
+  outline: none;
+  transition-duration: 0.3s;
+  margin-top: 5px;
+}
+
+.checkbox::after {
+  content: "==";
+  position: relative;
+  width: 35x;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgb(218, 218, 218);
+  color: rgba(255, 255, 255, 0);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.836);
+  border: 2px solid rgb(218, 218, 218);
+  transition-duration: 0.3s;
+  
+}
+
+.checkbox:checked::after {
+  margin-left: 30px;
+}
+
+.checkbox:hover::after {
+  background-color: white;
+  border: 2px solid white;
+}
+
+.checkbox:hover {
+  border: 2px solid rgb(255, 255, 255);
+}
+
+.checkbox:checked {
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.281);
+}
+
+
+.slider-container {
+  width: 42vh;
+  height: 20px;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 100%;
+  background: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 20px;
+  opacity: 0.8;
+  transition-duration: 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+  background: none;
+}
+
+.slider:hover {
+  opacity: 1;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.192);
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 45%;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+}
+
+.options-button {
+  position: relative;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.63);
+  border-radius: 5px;
+  background: none;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  color: rgba(255, 255, 255, 0.705);
+  font-size: 14px;
+  transition-duration: 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+}
+
+.options-button:hover {
+  background-color: rgba(255, 255, 255, 0.897);
+  color: rgb(0, 0, 0);
+  border: 2px solid rgba(255, 255, 255, 0);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.329);
+}
+
+.planet, .star, .orbit-path {
+  position: absolute;
+  border-radius: 50%;
+  width: var(--size);
+  height: var(--size);
+  top: calc(50% - var(--size) / 2);
+  left: calc(50% - var(--size) / 2);
+  box-shadow: -5px 0 25px rgba(255, 255, 255, 0.192);
+}
+
+.sun {
+  --size: 6vw;
+  background: linear-gradient(45deg, rgb(238, 223, 17), yellow);
+  animation: sun 1s infinite linear;
+  box-shadow: 0 0 200px rgb(255, 255, 0), 0 0 150px rgb(255, 255, 0), 0 0 50px rgb(255, 255, 0);
+}
+
+.mercury {
+  --size: 0.8vw;
+  background: linear-gradient(90deg, rgb(177, 177, 177), rgb(46, 46, 46));
+  animation: mercury var(--mercurySpeed) infinite linear, shadow var(--mercurySpeed) infinite linear;
+}
+
+.venus {
+  --size: 1.2vw;
+  background: linear-gradient(90deg, rgb(240, 84, 28), rgb(53, 14, 0));
+  animation: venus var(--venusSpeed) infinite linear, shadow var(--venusSpeed) infinite linear;
+}
+
+.earth {
+  --size: 1.5vw;
+  background: linear-gradient(90deg, rgb(157, 192, 255), rgb(21, 39, 75));
+  animation: earth var(--earthSpeed) infinite linear, shadow var(--earthSpeed) infinite linear;
+}
+
+.moon {
+  --size: 0.38vw;
+  background: linear-gradient(90deg, rgb(236, 236, 236), rgb(100, 100, 100));
+  animation: moon calc(var(--earthSpeed) / 13.83846) infinite linear, shadow calc(var(--earthSpeed) / 13.83846) infinite linear;
+}
+
+.mars {
+  --size: 1.2vw;
+  background: linear-gradient(90deg, rgb(238, 43, 82), rgb(70, 8, 20));
+  animation: mars var(--marsSpeed) infinite linear, shadow var(--marsSpeed) infinite linear;
+}
+
+.jupiter {
+  --size: 5vw;
+  background: linear-gradient(90deg, rgb(255, 148, 136), rgb(73, 37, 33));
+  animation: jupiter var(--jupiterSpeed) infinite linear, shadow var(--jupiterSpeed) infinite linear;
+}
+p{
+  animation: none;
+}
+
+.saturn {
+  --size: 3.5vw;
+  background: linear-gradient(90deg, rgb(255, 170, 85), rgb(63, 40, 16));
+  animation: saturn var(--saturnSpeed) infinite linear, shadow var(--saturnSpeed) infinite linear;
+}
+
+.saturn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140%;
+  height: 10px;
+  border: 0.7vw solid beige;
+  border-top: 0;
+  transform: translate(-50%, -50%) rotate(30deg);
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.uranus {
+  --size: 2vw;
+  background: linear-gradient(90deg, rgb(100, 176, 248), rgb(0, 46, 61));
+  animation: uranus var(--uranusSpeed) infinite linear, shadow var(--uranusSpeed) infinite linear;
+}
+
+.neptune {
+  --size: 1.7vw;
+  background: linear-gradient(90deg, rgb(56, 225, 255), rgb(0, 82, 64));
+  animation: neptune var(--neptuneSpeed) infinite linear, shadow var(--neptuneSpeed) infinite linear;
+}
+
+@keyframes mercury {
+  from {
+    transform: rotate(0deg) translate(5vw);
+  }
+
+  to {
+    transform: rotate(360deg) translate(5vw);
+  }
+}
+
+@keyframes venus {
+  from {
+    transform: rotate(0deg) translate(8vw);
+  }
+
+  to {
+    transform: rotate(360deg) translate(8vw);
+  }
+}
+
+@keyframes earth {
+  from {
+    transform: rotate(0deg) translate(11vw);
+  }
+
+  to {
+    transform: rotate(360deg) translate(11vw);
+  }
+}
+
+@keyframes mars {
+  from {
+    transform: rotate(0deg) translate(14vw);
+  }
+
+  to {
+    transform: rotate(360deg) translate(14vw);
+  }
+}
+
+@keyframes asteroid {
+  from {
+    transform: rotate(0deg) translate(16vw);
+  }
+
+  to {
+    transform: rotate(360deg) translate(16vw);
+  }
+}
+
+
+@keyframes jupiter {
+  from {
+    transform: rotate(0deg) translate(19vw);
+  }
+
+  to {
+    transform: rotate(360deg) translate(19vw);
+  }
+}
+
+@keyframes saturn {
+  from {
+    transform: rotate(0deg) translate(26vw);
+  }
+
+  to {
+    transform: rotate(360deg) translate(26vw);
+  }
+}
+
+@keyframes uranus {
+  from {
+    transform: rotate(0deg) translate(33vw);
+  }
+
+  to {
+    transform: rotate(360deg) translate(33vw);
+  }
+}
+
+@keyframes neptune {
+  from {
+    transform: rotate(0deg) translate(37vw);
+  }
+
+  to {
+    transform: rotate(360deg) translate(37vw);
+  }
+}
+
+@keyframes moon {
+  from {
+    transform: rotate(0deg) translate(1.5vw);
+  }
+
+  to {
+    transform: rotate(360deg) translate(1.5vw);
+  }
+}
+
+@keyframes sun {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shadow {
+  
+}
+
+.mercury-orbit {
+  position: absolute;
+  --size: 9.5vw;
+  border: 2px solid var(--orbit);
+  border-radius: 50%;
+  background: none;
+  list-style: none;
+  z-index: -100;
+  box-shadow: none;
+  margin-left: -0.1vw;
+  margin-top: -0.1vw;
+}
+
+.venus-orbit {
+  position: absolute;
+  --size: 15.5vw;
+  border: 2px solid var(--orbit);
+  border-radius: 50%;
+  background: none;
+  list-style: none;
+  z-index: -100;
+  box-shadow: none;
+  margin-left: -0.1vw;
+  margin-top: -0.1vw;
+}
+
+.earth-orbit {
+  position: absolute;
+  --size: 21.5vw;
+  border: 2px solid var(--orbit);
+  border-radius: 50%;
+  background: none;
+  list-style: none;
+  z-index: -100;
+  box-shadow: none;
+  margin-left: -0.1vw;
+  margin-top: -0.1vw;
+}
+
+.mars-orbit {
+  position: absolute;
+  --size: 27.5vw;
+  border: 2px solid var(--orbit);
+  border-radius: 50%;
+  background: none;
+  list-style: none;
+  z-index: -100;
+  box-shadow: none;
+  margin-left: -0.1vw;
+  margin-top: -0.1vw;
+}
+
+.jupiter-orbit {
+  position: absolute;
+  --size: 39vw;
+  border: 2px solid var(--orbit);
+  border-radius: 50%;
+  background: none;
+  list-style: none;
+  z-index: -100;
+  box-shadow: none;
+  margin-left: -0.1vw;
+  margin-top: -0.1vw;
+}
+
+.saturn-orbit {
+  position: absolute;
+  --size: 52vw;
+  border: 2px solid var(--orbit);
+  border-radius: 50%;
+  background: none;
+  list-style: none;
+  z-index: -100;
+  box-shadow: none;
+  margin-left: -0.1vw;
+  margin-top: -0.1vw;
+}
+
+.uranus-orbit {
+  position: absolute;
+  --size: 65.5vw;
+  border: 2px solid var(--orbit);
+  border-radius: 50%;
+  background: none;
+  list-style: none;
+  z-index: -100;
+  box-shadow: none;
+  margin-left: -0.1vw;
+  margin-top: -0.1vw;
+}
+
+.neptune-orbit {
+  position: absolute;
+  --size: 73.5vw;
+  border: 2px solid var(--orbit);
+  border-radius: 50%;
+  background: none;
+  list-style: none;
+  z-index: -100;
+  box-shadow: none;
+  margin-left: -0.1vw;
+  margin-top: -0.1vw;
+}
+
+.info-container {
+  position: absolute;
+  margin-left: 88%;
+  width: auto;
+  height: 100vh;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+}
+
+.info-item {
+  position: relative;
+  color: rgb(201, 198, 198);
+  font-family: 'Open Sans', sans-serif;
+  outline: none;
+  background-color: #afabab3b;
+  border: none;
+  font-size: 17px;
+  transition-duration: 0.15s;
+  padding: 10px;
+  pointer-events: all;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+}
+
+.info-item:hover {
+  color: white;
+  background-color: #1817173b;
+}
+
+.info-item:focus {
+  color: rgb(0, 178, 223);
+}
+
+.info-item:focus ~ .wrapper {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.wrapper {
+  position: absolute;
+  margin-left: -245px;
+  width: 230px;
+  height: 300px;
+  margin-top: 3vh;
+  background-color: rgba(186, 185, 185, 0.115);
+  border: 2px solid rgba(255, 255, 255, 0.479);
+  outline: none;
+  border-radius: 2px;
+  opacity: 0;
+  transition-duration: 0.5s;
+  pointer-events: none;
+  cursor: default;
+  z-index: 100;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+}
+
+.wrapper-text {
+  position: relative;
+  color: rgb(255, 255, 255);
+  font-family: 'Lexend', sans-serif;
+  outline: none;
+  background: none;
+  border: none;
+  font-weight: 100;
+  font-size: 12px;
+  transition-duration: 0.15s;
+  padding: 10px;
+  pointer-events: all;
+  letter-spacing: 1px;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+}
+
+.wrapper-title {
+  position: relative;
+  color: rgb(255, 255, 255);
+  font-family: 'Lexend', sans-serif;
+  outline: none;
+  background: none;
+  border: none;
+  font-size: 18px;
+  transition-duration: 0.15s;
+  text-align: center;
+  padding: 10px;
+  pointer-events: all;
+  letter-spacing: 2px;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+}
+
+.wrapper-hidden {
+  position: absolute;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  display: none;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0;
+  outline: none;
+  border: none; 
+  opacity: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+}
+.ghost{
+  height: 90px;
+  position: absolute;
+  left:120%;
+
+  animation: ghost 4.5s ease-in-out infinite;
+  transform: rotate(-90deg);
+  margin-top: -23px;
+}
+@keyframes ghost{
+  to{
+    left: -160px;
+  }
+}
+.newscon{
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  text-align: center;
+  height: 700px;
+  width: 89%;
+ border: 1px solid #fff;
+ border-radius: 10px;
+ box-shadow: rgba(0, 145, 255, 0.408) 0px 5px 15px;
+ margin-top: 25px;
+ margin-left:5.5%;
+ display: grid;
+ gap: 10px 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr ; /* Three equal-width columns */
+  grid-template-rows: 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px  ; /* Two rows with fixed heights */
+}
+
+.grid-item img{
+  height: 158px;
+  width: 250px;
+  object-fit: cover;
+
+}
+.grid-item .tit{
+  background-color: #fff;
+  color: #000;
+ font-size: 15px;
+ height: 47px;
+ margin-top: -10px;
+ padding: 10px;
+}
+.tit a{
+  color: #000;
+  position: relative;
+  padding: 10px;
+}
+
+.bookcontainer{
+  height: 300px;
+  width: 320px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+}
+.bookp{
+margin-top: 70px;
+  height: 70px;
+  width: 760px;
+  box-shadow: rgba(0, 145, 255, 0.408) 0px 5px 15px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+}
+.rect{
+ 
+  height: 100;
+  width: 100%;
+  position: absolute;
+ 
+  text-align: center;
+  padding: 15px;
+
+  border-radius: 10px;
+}
+.grids{
+  display: flex;
+  position: absolute;
+  top: 17%;
+  left: 25%;
+gap: 20px;
+
+}
+.gridbox{
+  height: 110px;
+  width: 110px;
+  border: 1px solid #fff;
+padding-top:30px;
+text-align: center;
+border-radius: 10px;
+backdrop-filter: blur(15px);
+ box-shadow: rgba(0, 145, 255, 0.408) 0px 5px 15px;
+}
+.gridbox p{
+  margin-top: 7px;
+  font-weight: bold;
+}
+.scroll {
+  backdrop-filter: blur(10px);
+  top:27%;
+  left:47%;
+	width: 60px;
+	height: 60px;
+	border: 2px solid #ffffff;
+	border-radius: 50%;
+	position: absolute;
+	animation: down 1.5s infinite;
+	-webkit-animation: down 1.5s infinite;
+	&::before {
+		content: '';
+		position: absolute;
+		top: 15px;
+		left: 18px;
+		width: 18px;
+		height: 18px;
+		border-left: 2px solid #ffffff;
+  	border-bottom: 2px solid #ffffff;
+		transform: rotate(-45deg);
+	}
+}
+
+@keyframes down {
+	0% {
+		transform: translate(0);
+	}
+	20% {
+		transform: translateY(15px);
+	}
+	40% {
+		transform: translate(0);
+	}
+}
+
+@-webkit-keyframes down {
+	0% {
+		transform: translate(0);
+	}
+	20% {
+		transform: translateY(15px);
+	}
+	40% {
+		transform: translate(0);
+	}
+}
+
+#earth {
+	position: relative;
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	background: transparent url("round.png");
+	background-size: cover;
+	box-shadow: inset 0px -20px 50px 10px rgba(40, 122, 255, 0.884),
+        0px 0px 30px 6px rgba(40, 122, 255, 0.532);
+	transform-style: preserve-3d;
+	transform: rotate(20deg);
+	animation: rotate 15s linear infinite;
+}
+@keyframes blinks {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rotate {
+	0% {
+		background-position: 0 0;
+	}
+
+	100% {
+		background-position: 530px 0;
+	}
+}
+button{
+  height: 38px;
+  width: 150px;
+  top: 34px;
+  border: 1px solid #fff;
+  position: relative;
+  left: 37%;
+  border-radius: 10px;
+  background-color: #025a924c;
+  box-shadow: rgba(2, 60, 105, 0.408) 0px 5px 15px;
+  font-size: larger;
+}
+.courses{
+  height: 500px;
+  width: 100%;
+text-align: center;
+  display: flex;
+  padding-left: 90px ;
+
+}
+.ctitle{border: 2px solid #fff;
+  width: 290px;
+  height: 60px;
+  position: absolute;
+  left: 37%;
+  text-align: center;
+  font-size: 22px;
+  padding: 15px;
+  font-weight: bold;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+.cbox{
+  height: 200px;
+  width: 300px;
+  background-color: #070110;
+  margin-top: 15%;
+  margin-right: 60px;
+  border: 2px solid #fff;
+}
+.cbox img{
+  height: 200px;
+  width: 300px;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+.next:hover{
+  background-color: #fff5f5da;
+  color: #000;
+}
+#log:hover{
+background-color: #000;
+}
+.test{
+  height: 320px;
+  width: 260px;
+  border: 2px solid #fff;
+  margin: 20px;
+  padding: 30px;
+  border-radius: 10px;
+}
+.testname{
+  display: flex;
+}
+.testname img{
+  height: 50px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  box-shadow: rgba(0, 145, 255, 0.408) 0px 5px 15px;
+  width: 50px;
+  object-fit: cover;
+}
+.testname p{
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.comment{
+  margin-top: 20px;
+  background-color: #00000075;
+text-align: center;
+  padding: 20px 5px 10px 5px;
+  height: 180px;
+  border-radius: 15px;
+}
+.comment p{
+  font-size: 14px;
+}
+  </style>
+  <script src="/script.js" defer></script>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/cursor.css">
+    <link rel="icon" type="image/x-icon" href="/i.png">
+
+    
+</head>
+<body>  <audio id="backgroundMusic" autoplay loop volume="0">
+  <source src="/bg.mp3" type="audio/mpeg" volume="0">
+  Your browser does not support the audio element.
+</audio>
+<audio id="backgroundMusi" autoplay volume="0" >
+  <source src="/home.m4a" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+  <div class="bg"></div>
+
+  <div class="star-field">
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  </div>
+
+
+
+    <div class="sidebar">
+      <div class="logo"></div>
+        <div class="side">
+            
+        <ul>
+            <li class="active"><a href="/dashboard"><img src="/home.svg">Home</a></li>
+          <li ><a href="/courses"><img src="/note.svg">Courses</a></li>
+          <li><a href="/lessons"><img src="/p.svg">Resources</a></li>
+          <li><a href="/solar"><img src="/planet.svg">Models</a></li>
+          <li><a href="/act"><img src="/galaxy-svgrepo-com.svg">Activities</a></li>
+   
+          <li><a href="/quiz"><img src="/pen-.svg">Quiz</a></li>
+          
+          <li><a href="/videos"><img src="/video.svg">Videos</a></li>
+          <li><a href="/dev"><img src="/team.svg">Devs</a></li>
+      
+        </ul></div>
+        <img src="/light.png" style="height:80px;width:300px;bottom:0;left:-40px;position:absolute;margin-bottom: 13px;">
+
+      </div>
+
+      <nav>
+        <div class="logo">
+          <img src="bot.png"><div class="tit">
+            <p>K A L A W A K A N <br>E - Learning Web</p>
+          </div>
+        </div>
+       <div class="account">
+        <p>Account</p><img src="/acc.svg" id="open-modal-btn">
+       </div>
+      </nav>
+
+
+      
+      <div class="main-content" style="border: none;padding:0;box-shadow: none;backdrop-filter: none;">
+        <h1 style="text-align: center;font-size: 45px;margin-top: 20px;filter: drop-shadow( 10px 10px 10px rgba(59, 157, 255, 0.696));">E X P L O R I N G <span style="margin-left: 30px;"> K A L A W A K A N:</span> <img src="/rocket-black-ship-svgrepo-com.svg" class="ghost"> <p style="font-size: 25px; color: rgba(40, 176, 255, 0.897);">Unraveling the Wonders of Space    </p></h1><br><br>
+       <br>
+      <p style="text-align: center;font-size: 17px;"> Welcome to Kalawakan, your premier e-learning platform dedicated to exploring the vast wonders of space!<br>At Kalawakan, we believe that the universe holds endless mysteries and extraordinary discoveries waiting to be unraveled.<br> Our mission is to ignite your curiosity and provide you with a comprehensive educational experience that delves into the <br>captivating realm of space.
+        <img src="/light.png" style="height: 280px;width:680px;position: absolute;left:22%;top:19%;margin-bottom:30px;">
+        <br><br><br> <br>
+<br>
+       <div class="box" style="height: 400px;">
+
+        <div class="rect"><p style="font-weight: bold;font-size: 17px;">D I S C O V E R I E S <br><span style="color: rgba(40, 176, 255, 0.897) ;">As of year 2023</span></p></div>
+        <div class="grids">
+          <div class="gridbox"><span id="count5"  style="font-size: 20px;">250</span>+<p style="color:  rgb(40, 123, 255)">Galaxies</p></div>
+
+          <div class="gridbox"><span id="count1" style="font-size: 20px;">8</span><p style="color:  rgb(40, 123, 255)">Planets</p></div>
+          <div class="gridbox"><span id="count2"  style="font-size: 20px;">200</span>+<p style="color:  rgb(40, 123, 255)">Moons</p></div>
+          <div class="gridbox"><span id="count3"  style="font-size: 20px;">1,283,926</span><p style="color:  rgb(40, 123, 255)">Asteroids</p></div>
+          <div class="gridbox"><span id="count4"  style="font-size: 20px;">3,000</span><p style="color:  rgb(40, 123, 255)">Comets</p></div>
+
+        </div>
+       </div>
+</p>
+       <div class="scroll"></div>
+       
+  <div class="box">
+    <div class="con">
+    <label for="switch-button">
+    <div class="switch">
+    
+    </div>
+    </label>
+  <div class="face"></div>
+  <div class="head"></div>
+ 
+  <label for="fly-button">
+  <div class="body"><p style="color:#000;">R O B O T</p></div>
+  </label>
+  <div class="left-hand"></div>
+  <div class="right-hand"></div>
+  <div class="eye1"></div>
+  <div class="eye2"></div>
+  <div class="fly-wave">
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  </div></div>
+  <div class="intro"><p style="font-size: 15px; color:rgb(40, 123, 255)">Space Fact:</p>
+    <p id="typing-animation" style="text-indent: 1em; margin-top: 5px;"></p>  </div>
+      </div>
+
+<div class="d" style="display: flex;margin-left: 80px; animation: floacct 3s ease-in-out infinite;height: 220px;">
+      <div class="bookp"><p style="text-align: center;font-size: 18px;padding: 10px;margin-top: 10px;">"Education is the most powerful weapon which you can use to change the world."  <span style="color: rgb(40, 123, 255);">- Nelson Mandela</span></p></div>
+      <div class="bookcontainer" style=" animation: floats 3s ease-in-out infinite;">
+        <div id="earth"></div></div>
+</div>
+
+<div class="courses">
+<div class="ctitle">Featured Space Courses</div>
+<p style="position: absolute;margin-top: 100px;text-align: center;width: 100%;margin-left: -90px;">Explore our selection of top-rated courses to enhance your knowledge and skills.</p>
+<div class="cbox"><img src="/so.jpg"><div class="hov" style="position: absolute;z-index: 20;background-color: #ffffff3d;width: 70px;height: 50px;margin-top: -205px;font-size: 50px;text-align:center;text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">01</div>
+  <div class="hov" style="position: absolute;z-index: 20;background-color: #ffffff3d;width: 300px;height: 60px;margin-top: -64px;font-size: 20px;text-align: center; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Exploring the Solar System<p style="font-size: 13px;">Embark on a journey through our solar system and discover its wonders.</p>
+</div></div>
+<div class="cbox"><img src="/astro.jpg"><div class="hov" style="position: absolute;z-index: 20;background-color: #ffffff3d;width: 70px;height: 50px;margin-top: -205px;font-size: 50px;text-align:center;text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">02</div>
+  <div class="hov" style="position: absolute;z-index: 20;background-color: #ffffff3d;width: 300px;height: 60px;margin-top: -64px;font-size: 20px;text-align: center; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Introduction to Astrophysics<p style="font-size: 13px;">Dive into the fascinating world of astrophysics and learn about celestial objects.</p>
+</div></div>
+<div class="cbox"><img src="/his.jpg"><div class="hov" style="position: absolute;z-index: 20;background-color: #ffffff3d;width: 70px;height: 50px;margin-top: -205px;font-size: 50px;text-align:center;text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">03</div>
+  <div class="hov" style="position: absolute;z-index: 20;background-color: #ffffff3d;width: 300px;height: 60px;margin-top: -64px;font-size: 20px;text-align: center; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Space Exploration History<p style="font-size: 13px;">Trace the history of human space exploration and the achievements of astronauts.</p>
+</div></div>
+<div class="next" style="position: absolute;top: 62%;left:44%;height: 33px;width: 140px;border: 1px solid #fff;border-radius:30px;padding-top: 7px;text-align: center;">See All Courses</div>
+</div>
+
+
+    <div class="news" style="height: 60px;width: 300px;text-align: center;font-size: 22px;padding:9px;border:1px solid #fff;border-radius: 10px;
+    margin-left: 70px;  backdrop-filter: blur(15px);margin-top: 20px;"><p style="margin-top: 6px;">Latest News and Updates</p></div>
+    <div class="newscon">
+      <div class="grid-item">
+        <img src="/news1.png">
+        <div class="tit"><a href="https://www.nasa.gov/press-release/nasa-to-discuss-conclusions-of-psyche-mission-independent-review-board">NASA to Discuss Conclusions of Psyche Mission</a></div>
+      </div>
+      <div class="grid-item">
+        <img src="/news2.jpeg">
+        <div class="tit"><a href="https://www.nasa.gov/press-release/nasa-sets-coverage-for-next-spacex-resupply-launch-to-space-station-1">The 28th SpaceX Commercial Resupply Services (CRS) Mission</a></div>
+      </div>
+      <div class="grid-item">
+        <img src="/news4.png">
+        <div class="tit"><a href="https://www.nasa.gov/feature/goddard/2023/webb-maps-surprisingly-large-plume-jetting-from-saturn-s-moon-enceladus/">Webb Maps Surprisingly Large Plume Jetting From Saturn</a></div>
+      </div>
+      <div class="grid-item">
+        <img src="/news5.jpg">
+        <div class="tit"><a href="https://www.nasa.gov/image-feature/computer-programmer-and-mathematician-josephine-jue">Computer Programmer and Mathematician Josephine Jue</a></div>
+      </div>
+      <div class="grid-item">
+        <img src="/news6.jpg">
+        <div class="tit"><a href="https://www.space.com/solar-flares-cme-particle-acceleration-mystery">New technique could probe the heart of powerful solar storms</a></div>
+      </div>
+      <div class="grid-item">
+        <img src="/news7.jpg">
+        <div class="tit"><a href="https://www.space.com/40547-spacex-rocket-evolution.html">See the evolution of SpaceX rockets in pictures</a></div>
+      </div>
+      <div class="grid-item">
+        <img src="/news8.jpg">
+        <div class="tit"><a href="https://www.space.com/nasa-ufo-study-group-better-data-needed">UFOs will remain mysterious without better data, NASA </a></div>
+      </div>
+      <div class="grid-item">
+        <img src="/news9.jpg">
+        <div class="tit"><a href="https://www.space.com/wooden-satellite-lignosat-japan-2024">Japan has a wild idea to launch a satellite made of wood </a></div>
+      </div>
+      <div class="grid-item">
+        <img src="/news10.jpg">
+        <div class="tit"><a href="https://www.space.com/supermassive-black-hole-image-chandra-m84">Monster black hole burps out hot gas in bright 'H' shape</a></div>
+      </div>
+      <div class="grid-item">
+        <img src="/news11.jpg">
+        <div class="tit"><a href="https://www.space.com/infant-stars-burst-from-stellar-nursery-nebula-lupus-3-photo">Infant stars burst out of their cosmic cribs in a violent stellar </a></div>
+      </div>
+      <div class="grid-item">
+        <img src="/news12.jpg">
+        <div class="tit"><a href="https://www.space.com/nasa-ufo-study-livestream-may-2023">NASA's UFO task force </a></div>
+      </div>
+      <div class="grid-item">
+        <img src="/news13.jpg">
+        <div class="tit"><a href="https://www.space.com/black-hole-hubble-space-telescope-star-cluster-intermediate-mass">Hubble telescope hunts for a black hole among a brilliant.</a></div>
+      </div>
+    <p style="position: absolute;bottom: 0;left: 45%;margin-bottom: 10px;">See more...</p>
+    </div>
+      </div>
+  </div>
+
+      
+  <div class="main-content" style="border: none;margin-top: 130px;">
+    <h2 style="text-align: center;">Testemonials</h2>
+    <div  style="display: flex;margin-top: 20px;" >
+  <div class="test">
+    <div class="testname"><img src="/com.jpg"><div><p>Sweetzell Lapatis</p>
+      <p>@Sweetie</p></div></div>
+
+      <div class="comment">
+        <p>"The Space E-Learning Web exceeded my expectations! The interactive content and knowledgeable instructors made learning about space captivating. Highly recommended!"</p>
+      </div>
+  </div>
+  <div class="test">
+    <div class="testname"><img src="/aki.jpg"><div><p>Hayakawa Aki</p>
+      <p>@Aki</p></div></div>
+
+      <div class="comment">
+        <p>"I've always been fascinated by the cosmos, and the Space E-Learning Web brought that fascination to life. The engaging modules and supportive community made learning about space an incredible experience."</p>
+      </div>
+  </div>
+  <div class="test">
+    <div class="testname"><img src="/frog.jpg"><div><p>Ella Cruz</p>
+      <p>@elle</p></div></div>
+
+      <div class="comment">
+        <p>"As a beginner in astronomy, the Space E-Learning Web was the perfect starting point. The comprehensive resources and easy-to-follow lessons helped me grasp complex concepts with ease. Truly a stellar learning platform!" </p>
+      </div>
+  </div>
+  <div class="test">
+    <div class="testname"><img src="/hakken.jpg"><div><p>Hakken Co</p>
+      <p>@hakken</p></div></div>
+
+      <div class="comment">
+        <p>"Enrolling in the Space E-Learning Web was a game-changer. The quality of the course content, coupled with the interactive simulations, allowed me to explore the mysteries of space like never before. A must for any space enthusiast!"</p>
+      </div>
+  </div>
+
+</div>
+  </div>
+  <br>
+  <div class="main-content" style="border: none;">
+    <h2>Disclaimer:</h2>
+    <p> Our e-learning website may contain links, references, or mentions of third-party websites, resources, or materials. These are provided for informational purposes only, and we do not endorse or assume responsibility for the accuracy, reliability, or content of any external sources.</p>
+    <br><br>
+  </div>
+
+
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="logout">
+              <img src="/bot.png"><div class="infos"><p>Username: <span id="usernameLabel"></span></p><p>Password: <span id="passwordLabel"></span></p></div>
+            </div>
+            <button id="log">LOG OUT</button> <button id="circ" type="submit" onmouseover="playSound()" > </button>
+          </div>
+          <img src="/light.png" style="height: 125px;width:320px;position: absolute;left:41%;top:61%;margin-bottom:30px;">
+        </div>
+   
+
+
+
+
+     
+
+        </div>
+        <script>
+          document.getElementById('log').addEventListener('click', function() {
+  window.location.href = '/user'; // Replace with the desired destination page URL
+});
+          fetch('/getSessionUsername')
+              .then(response => response.json())
+              .then(data => {
+                  const usernameLabel = document.getElementById('usernameLabel');
+                  usernameLabel.textContent = data.username;
+                  const passwordLabel = document.getElementById('passwordLabel');
+                  passwordLabel.textContent = data.password;
+              })
+              .catch(error => {
+                  console.error('Error:', error);
+              });
+      </script>
+      
+      
+      
+
+        <script>
+          // JavaScript to trigger the typing animation
+          var element = document.getElementById('typing-animation');
+          var triviaFacts = [
+  "The Sun is so large that approximately 1.3 million Earths could fit inside it.",
+  "Neutron stars are so dense that a teaspoon of its material would weigh billions of tons.",
+  "The largest volcano in our solar system is on Mars. It is called Olympus Mons and is about 13.6 miles (22 kilometers) high.",
+  "Saturn's rings are not solid but are made up of countless particles of ice, rock, and dust.",
+  "The Moon is gradually moving away from Earth at a rate of about 1.5 inches (3.8 centimeters) per year.",
+  "A day on Venus is longer than a year on Venus. It takes Venus about 243 Earth days to rotate on its axis, but only about 225 Earth days to orbit the Sun.",
+  "There is a black hole at the center of our Milky Way galaxy called Sagittarius A*.",
+  "The coldest known place in the universe is the Boomerang Nebula, where temperatures reach close to absolute zero.",
+  "Astronauts in space grow taller due to the absence of gravity compressing the spine.",
+  "Space is completely silent because sound waves require a medium, such as air or water, to travel through.",
+  "Jupiter has the shortest day among all the planets in our solar system. It completes one rotation in about 9.9 hours.",
+  "The Hubble Space Telescope, launched in 1990, has captured some of the most detailed images of our universe, helping astronomers make groundbreaking discoveries.",
+  "The International Space Station (ISS) is a habitable space station that orbits around the Earth and serves as a research laboratory for various scientific experiments.",
+  "Astronauts on the ISS experience around 16 sunrises and sunsets every day due to the station's fast orbit around the Earth.",
+  "The Great Red Spot is a massive storm on Jupiter that has been observed for over 300 years. It is so large that it could engulf several Earth-sized planets.",
+  "The Milky Way galaxy is estimated to contain over 100 billion stars, and it is just one of the billions of galaxies in the observable universe."
+];
+    function getRandomFact() {
+      var randomIndex = Math.floor(Math.random() * triviaFacts.length);
+      return triviaFacts[randomIndex];
+    }
+
+    var currentFact = getRandomFact();
+    var i = 0;
+    function typeWriter() {
+      if (i < currentFact.length) {
+        element.innerHTML += currentFact.charAt(i);
+        i++;
+        setTimeout(typeWriter, 80); // Delay between characters (in milliseconds)
+      } else {
+        // Wait for some time before displaying the next trivia fact
+        setTimeout(function() {
+          element.innerHTML = '';
+          currentFact = getRandomFact();
+          i = 0;
+          typeWriter();
+        }, 5500); // Delay between trivia facts (in milliseconds)
+      }
+    }
+
+    typeWriter();
+
+
+
+    const openModalBtn = document.getElementById('open-modal-btn');
+      const modal = document.getElementById('modal');
+      const closeBtn = document.querySelector('.close-btn');
+
+      // Open the modal
+      openModalBtn.addEventListener('click', () => {
+        modal.style.display = 'block';
+      });
+
+      // Close the modal when the user clicks on the close button or outside the modal
+      closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      window.addEventListener('click', (event) => {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      });
+
+
+
+      var audio = document.getElementById("backgroundMusic");
+      audio.volume = 0.1;
+
+
+
+
+
+
+
+    function animateCount(target, duration, spanId) {
+      const element = document.getElementById(spanId);
+      const start = 0;
+      const increment = Math.ceil(target / (duration / 10)); // Increment value for each step of the animation
+
+      let current = start;
+
+      const timer = setInterval(() => {
+        current += increment;
+        element.textContent = current;
+
+        if (current >= target) {
+          element.textContent = target;
+          clearInterval(timer);
+        }
+      }, 10); // Adjust the interval (in milliseconds) to control the speed of the animation
+    }
+
+    // Usage example
+    animateCount(8, 2000, "count1"); // Customize the target, duration, and span ID for each animateCount call
+    animateCount(200, 2000, "count2");
+    animateCount(1283926, 2000, "count3");
+    animateCount(3875, 2000, "count4");
+    animateCount(250, 2000, "count5");
+   
+        </script>
+        <script src="/cursor.js"></script>
+        <script>
+          // Get a reference to the background music audio element
+        const backgroundMusic = document.getElementById("backgroundMusic");
+        
+        // Function to play the background music
+        function playBackgroundMusic() {
+          backgroundMusic.play();
+        }
+        
+        // Add event listeners for user interactions
+        document.addEventListener("click", playBackgroundMusic);
+        document.addEventListener("keydown", playBackgroundMusic);
+         </script>
+</body>
+</html>

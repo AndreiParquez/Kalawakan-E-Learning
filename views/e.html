@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <script src="/vec3.js"></script>
+  <style>
+    @font-face {
+  font-family: "myfont";
+  src: url("modern\ M.ttf");
+}
+    body {
+    padding: 0;
+    margin: 0;
+   
+}
+
+.container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 700px;
+            text-align: center;
+            z-index: 999999999;
+            background-color: rgb(3, 4, 7);
+            font-family: "myfont";
+            color: rgba(40, 176, 255, 0.897);
+            
+        }
+        #l{
+          margin: 0;
+           
+           
+        }
+        
+        @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+.loader img{
+    height: 30px;
+    animation: bounce 1s infinite;
+}
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(512724.png) no-repeat;
+}
+.centered-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 250px;
+  z-index: 1;
+  text-align: center;
+  backdrop-filter: blur(2px);
+  font-family: "myfont";
+  display: none;
+}
+.centered-div1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 250px;
+  z-index: 1;
+  text-align: center;
+  backdrop-filter: blur(2px);
+  font-family: "myfont";
+  display: none;
+  z-index:200;
+}
+.centered-div P{
+  margin-top:140px;
+  font-size: 20px;
+  color: rgba(40, 176, 255, 0.897);
+  
+}
+.centered-div1 P{
+  margin-top:140px;
+  font-size: 20px;
+  color: rgba(40, 176, 255, 0.897);
+  
+}
+button{
+  width: 100px;
+  height: 45px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: rgba(34, 34, 34, 0.25) 0px 54px 55px, rgba(126, 125, 125, 0.12) 0px -12px 30px, rgba(123, 122, 122, 0.12) 0px 4px 6px, rgba(99, 98, 98, 0.17) 0px 12px 13px, rgba(106, 103, 103, 0.09) 0px -3px 5px;
+
+
+}
+
+button:hover{
+  background-color: #fff;
+  color: black;
+}
+
+
+
+  </style>
+</head>
+<body>
+  <canvas id="canvas">
+ </canvas>
+ <div class="centered-div" id="timed-paragraph">
+ <p >Account Creation Success</p></div>
+ <div class="centered-div1" id="timed-paragraph1">
+ <p >Redirecting... In 3... 2... 1...</p></div>
+  <audio id="voice" autoplay>
+
+  <source src="/public/warp.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+  <script src="public/space.js">
+  </script>
+     <script>
+      var audio = new Audio('/acc creation.m4a');
+      audio.play();
+      setTimeout(function() {
+        var audio = new Audio('/redirecting.m4a');
+        audio.play();
+      }, 10500); 
+      setTimeout(function() {
+        window.location.href = 'dashboard';
+      }, 14900); // Delay the redirect by 2 seconds to allow time for the sound to play
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var paragraph = document.getElementById("timed-paragraph");
+    
+      setTimeout(function() {
+        paragraph.style.display = "block";
+      }, 10); // 5000 milliseconds = 5 seconds
+      setTimeout(function() {
+        paragraph.style.display = "none";
+      }, 3000); // 5000 milliseconds = 5 seconds
+    });
+    
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var paragraph = document.getElementById("timed-paragraph1");
+    
+      setTimeout(function() {
+        paragraph.style.display = "block";
+      }, 11000); // 5000 milliseconds = 5 seconds
+      setTimeout(function() {
+        paragraph.style.display = "none";
+      }, 15000); // 5000 milliseconds = 5 seconds
+    });
+    
+    </script>
+</body>
+</html>

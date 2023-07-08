@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K A L A W A K A N - E learning</title>
+  <style>
+@font-face {
+    font-family: "myfont";
+    src: url("/modern\ M.ttf");
+  }
+  body{
+    background-color: #070110;
+  }
+  .con{
+    height: 160px;
+    width: 250px;
+   margin-left: 30px;
+   margin-right: -40px;
+  display: block;
+    transform: translate(-50%, -50%);
+  animation: floats 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px #000000a8) drop-shadow(0 0 15px #070707ab);
+
+   }
+   .main-content table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .main-content th {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+    font-size: 17px;
+    font-weight: 100;
+    white-space: nowrap;
+  }
+  .main-content td {
+    padding: 9px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    background-color: rgba(0, 128, 255, 0.044);
+  }
+  .main-content tr:hover{
+    background-color: #dddddd22;
+  }
+  .main-content a{
+    color: #fdfeff;
+  text-decoration: none;
+  position: relative;
+ 
+   
+  }
+  .main-content a img{
+    position: relative;
+    bottom: -6px;
+  }
+  .main-content th:nth-child(1), .main-content td:nth-child(1) {
+    width: 50%;
+
+
+  }
+
+  .main-content th:nth-child(2), .main-content td:nth-child(2) {
+    width: 1%;
+    text-align: center;
+  }
+
+  .main-content th:nth-child(3), .main-content td:nth-child(3) {
+    width: 5%;
+    text-align: justify;
+  }
+  .main-content th:nth-child(3){
+text-align: justify;
+  }
+
+  .main-content td img{
+    height: 25px;
+    margin-left: 10px;
+  }
+  .main-content img{
+    height: 25px;
+  }
+
+
+
+td img{
+  position: relative;
+
+}
+input{
+  color: #f1f1f1;
+  height: 45px;
+  width: 350px;
+  position: relative;
+  left: 30%;
+  border-radius: 25px;
+  border: 2px solid rgb(196, 196, 196);
+  text-align: center;
+  font-size: 16px;
+  background-color: rgba(0, 128, 255, 0.044);
+}
+input::placeholder{
+  text-align: center;
+  font-size: 16px;
+}
+button{
+  color: #070110;
+  height: 48px;
+  width: 48px;
+  position: relative;
+  left: 31%;
+  border-radius: 50%;
+  border: 3px solid rgb(3, 147, 249);
+  top: 7px;
+  border: 2px solid rgb(196, 196, 196);
+  background-color: rgba(0, 128, 255, 0.044);
+}
+button:hover{
+  background-color: #ddd;
+  transform: scale(1.1);
+  transition: .6s;
+}
+
+.courses{
+  height: 800px;
+  width: 100%;
+text-align: center;
+  display: flex;
+  padding-left: 90px ;
+   flex-wrap: wrap;
+   flex-wrap: wrap;
+  justify-content: center;
+
+}
+.ctitle{
+  width: 550px;
+  height: 60px;
+  position: absolute;
+  left: 28%;
+  text-align: center;
+  font-size: 26px;
+  padding: 15px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.cbox{
+  height: 200px;
+  width: 300px;
+  background-color: #070110;
+  margin-top: 15%;
+  margin-right: 60px;
+  border: 2px solid #fff;
+
+}
+.cbox2{
+  height: 200px;
+  width: 300px;
+  background-color: #070110;
+  margin-top: -3%;
+  margin-right: 60px;
+  border: 2px solid #fff;
+
+}
+.cbox img{
+  height: 200px;
+  width: 300px;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+.cbox2 img{
+  height: 200px;
+  width: 300px;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+.next:hover,.next a:hover{
+  background-color: #fff5f5da;
+  color: #000;
+}
+.title img{
+    object-fit: cover;
+    height: 200px;
+  width: 300px;
+
+}
+.title{
+    width: 37%;
+    background-color: #000;
+}
+.tite{
+    width: 70%;
+    padding: 20px;
+
+}.title img{
+    object-fit: cover;
+    height: 220px;
+    width: 380px;
+ 
+}
+.detbox{
+    display: flex;
+    margin-left: 50px;
+}
+.detboxes{
+    height: 66px;
+    width: 130px;
+border-radius: 10px;
+ margin-right: 30px;
+ border: 1px solid #fff;
+ margin-top: 6px;
+ padding: 16px;
+ text-align: center;
+ justify-content: center
+}
+  </style>
+    <link rel="icon" type="image/x-icon" href="/i.png">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/cursor.css">
+    
+</head>
+<body>  <audio id="backgroundMusic" autoplay loop volume="0">
+  <source src="/bg.mp3" type="audio/mpeg" volume="0">
+  Your browser does not support the audio element.
+</audio>
+<audio id="backgroundMusi" autoplay volume="0" >
+  <source src="/pddf.m4a" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+  <div class="bg"></div>
+
+  <div class="star-field">
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  </div>
+
+
+
+    <div class="sidebar">
+      <div class="logo"></div>
+        <div class="side">
+            
+        <ul>
+          <li><a href="/dashboard"><img src="/home.svg">Home</a></li>
+          <li  class="active" ><a href="/courses"><img src="/note.svg">Courses</a></li>
+          <li><a href="/lessons"><img src="/p.svg">Resources</a></li>
+          <li><a href="/solar"><img src="/planet.svg">Models</a></li>
+          <li><a href="/act"><img src="/galaxy-svgrepo-com.svg">Activities</a></li>   
+          <li><a href="/quiz"><img src="/pen-.svg">Quiz</a></li>
+          
+          <li><a href="/videos"><img src="/video.svg">Videos</a></li>
+          <li><a href="/dev"><img src="/team.svg">Devs</a></li>
+      
+        </ul></div>
+        <img src="/light.png" style="height:80px;width:300px;bottom:0;left:-40px;position:absolute;margin-bottom: 13px;">
+
+      </div>
+
+      <nav>
+        <div class="logo">
+          <img src="bot.png"><div class="tit">
+            <p>K A L A W A K A N <br>E - Learning Web</p>
+          </div>
+        </div>
+       <div class="account">
+      <p>Account</p><img src="/acc.svg" id="open-modal-btn">
+       </div>
+      </nav>
+
+
+      <div class="main-content">
+        <div style="display: flex;">
+        <div class="title"><img src="/so.jpg"></div>
+            <div class="tite">
+              <p style="font-size: 35px;">Course Title: <span style="color: #2d77fff7;">Exploring the Solar System</span></p>
+              <p style="font-size: 17px;"><span style="color: #2d77fff7;">Course Description:</span> Embark on a fascinating journey through our solar system and uncover its captivating wonders. Join us as we explore the vast expanse of space and dive into the depths of each celestial body within our cosmic neighborhood.</p>
+           
+              <div class="details">
+                <br>
+                <p>Course Details:</p>
+                <div class="detbox">
+                    <div class="detboxes"><div style="background-color: #fff70a;height: 10px;width: 10px;border-radius: 50%;position: absolute;margin-top: -7px;margin-left: -5px;"></div><p style="margin-top: 7px;">1 Week</p></div>
+                    <div class="detboxes"><div style="background-color: #00e73d;height: 10px;width: 10px;border-radius: 50%;position: absolute;margin-top: -7px;margin-left: -5px;"></div><p>Format: Online</p></div>
+                    <div class="detboxes"><div style="background-color: #00e73d;height: 10px;width: 10px;border-radius: 50%;position: absolute;margin-top: -7px;margin-left: -5px;"></div><p style="margin-top: 3px;">Prerequisites: None</p></div>
+                    <div class="detboxes"><div style="background-color: #00e73d;height: 10px;width: 10px;border-radius: 50%;position: absolute;margin-top: -7px;margin-left: -5px;"></div><p>Beginner to Intermediate</p></div>
+                    <div class="detboxes"><div style="background-color: #00e73d;height: 10px;width: 10px;border-radius: 50%;position: absolute;margin-top: -7px;margin-left: -5px;"></div><p style="margin-top: 7px;">English</p></div>
+
+                </div>
+            </div>
+         
+        
+          
+
+        </div>
+          </div> </div>
+
+
+        </div>
+
+        <div class="main-content">
+        
+<h1 style="text-align: center;"> <span style="color: #2d77fff7">Lesson 1:</span>Exploring the Solar System</h1>       
+
+<p style="margin-top: 47px;filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));">Welcome to Lesson 1 of our course, "Exploring the Solar System." In this lesson, we will provide you with a comprehensive introduction to the solar system and its fascinating components.
+      <p style="margin-top: 10px;">The solar system is a vast and awe-inspiring place, consisting of the Sun, planets, moons, asteroids, comets, and other celestial bodies. Let's embark on our journey by understanding the key elements that make up our cosmic neighborhood.</p>
+
+<h3 style="margin-top: 30px;">1. <span style="color: #2d77fff7">The Sun</span>
+</h3>
+<p style="margin-top: 10px;"> The Sun is the central star of the solar system, a massive ball of hot plasma. It is the source of light, heat, and energy for all the planets and objects in its gravitational pull. The Sun's immense size and temperature enable nuclear fusion, a process that releases tremendous energy.</p>
+<img src="/sun.png" style="height: 300px;width: 300px;margin-left: 37%;">
+<p style="margin-top: 10px;">The Sun is approximately 109 times larger than Earth and is composed mostly of hydrogen and helium gases. It radiates heat and light, illuminating the solar system and providing the conditions necessary for life on Earth.</p>
+
+<h3 style="margin-top: 40px;">2. <span style="color: #2d77fff7">The Inner Planets</span>
+</h3>
+<p style="margin-top: 10px;">Moving outward from the Sun, the inner planets are the four planets closest to it: Mercury, Venus, Earth, and Mars. These planets are known as terrestrial or rocky planets because they have solid surfaces composed of rocks and metals.</p>
+<img src="/in.png" style="height: 200px;width: 500px;margin-left: 30%;">
+<p style="margin-top: 10px;">Each inner planet has unique characteristics and features. Mercury is the closest to the Sun and experiences extreme temperature variations. Venus has a thick atmosphere and a runaway greenhouse effect, making it the hottest planet. Earth, our home, is the only known planet to support life. Mars has a thin atmosphere and shows evidence of past water activity, making it a target for future exploration.</p>
+<h3 style="margin-top: 40px;">3. <span style="color: #2d77fff7">The Outer Planets</span></h3>
+  <p style="margin-top: 10px;">Beyond the asteroid belt, we find the outer planets, also known as the gas giants: Jupiter, Saturn, Uranus, and Neptune. These planets are much larger than the inner planets and primarily composed of gases, such as hydrogen and helium.</p>
+
+  <img src="/out.png" style="height: 290px;width: 500px;margin-left: 30%;">
+  <p style="margin-top: 10px;">Jupiter, the largest planet, is known for its distinctive banded appearance and the Great Red Spot, a massive storm. Saturn is famous for its beautiful ring system made up of ice particles and rocky debris. Uranus and Neptune are ice giants with unique atmospheric features and a captivating blue color.</p>
+
+  <h3 style="margin-top: 40px;">4. <span style="color: #2d77fff7">Asteroids and Comets</span>
+  </h3>
+  <p style="margin-top: 10px;">The solar system is populated by smaller objects, such as asteroids and comets. Asteroids are rocky remnants left over from the early formation of the solar system. They range in size from small boulders to large bodies like Ceres, which is considered a dwarf planet.</p>
+  <img src="/asteroid.png" style="height: 220px;width: 220px;margin-left: 39%;margin-top:27px;margin-bottom:25px;">
+  <p style="margin-top: 10px;">Comets are icy bodies composed of frozen gases, dust, and rocky material. When a comet approaches the Sun, the heat causes the ice to vaporize, creating a glowing coma and a tail that can stretch millions of kilometers across the sky.</p>
+
+  <h3 style="margin-top: 40px;">5. <span style="color: #2d77fff7">Other Celestial Bodies:</span>
+  </h3>
+  <p style="margin-top: 10px;">In addition to planets, the solar system hosts other intriguing celestial bodies. Moons, also called natural satellites, orbit planets and offer valuable insights into their geological features and potential for habitability. Examples include Earth's Moon, Jupiter's moon Europa, and Saturn's moon Titan.</p>
+  <img src="/pluto.png" style="height: 200px;width: 300px;margin-left: 37%;margin-top:27px;margin-bottom:25px;">
+  <p style="margin-top: 10px;">Dwarf planets, such as Pluto and Eris, are similar to planets but have not cleared their orbits of other debris. They provide valuable insights into the outer regions of the solar system and the process of planet formation.</p>
+
+
+</div>
+
+
+<div class="main-content">
+  <h1 style="text-align: center;"> <span style="color: #2d77fff7">Lesson 2:</span>The Planets of Our Solar System</h1> 
+  <p style="margin-top: 47px;filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));">In this lesson, we will explore the different planets that make up our solar system. We will learn about their unique characteristics, including their size, composition, and fascinating features. Let's dive into the wonders of each planet:</p>
+
+  <h3 style="margin-top: 40px;">1. <span style="color: #2d77fff7">Mercury</span>
+  </h3>
+  <img src="/mercury.png" style="height: 250px;margin-left: 35%;margin-top:27px;margin-bottom:25px;">
+  <p style="margin-top: 10px;">Mercury is the closest planet to the Sun and the smallest planet in our solar system.
+    It has a rocky surface and no atmosphere, making it a harsh and extreme environment.
+    We will examine its scorching temperatures, long days, and crater-covered terrain.</p>
+
+
+    <h3 style="margin-top: 40px;">2. <span style="color: #2d77fff7">Venus</span>
+    </h3>
+    <img src="/venus.png" style="height: 250px;margin-left: 35%;margin-top:27px;margin-bottom:25px;">
+    <p style="margin-top: 10px;">Venus is known as Earth's "sister planet" due to its similar size and composition.
+      However, Venus has a thick atmosphere that traps heat, resulting in a runaway greenhouse effect.
+      We will study its dense atmosphere, toxic clouds of sulfuric acid, and the intense volcanic activity.</p>
+
+    <h3 style="margin-top: 40px;">3. <span style="color: #2d77fff7">Earth</span>
+    </h3>
+    <img src="/earth.png" style="height: 250px;margin-left: 35%;margin-top:27px;margin-bottom:25px;">
+    <p style="margin-top: 10px;">Earth is our home planet and the only known celestial body to support life.
+      We will explore its diverse ecosystems, abundant water, and the perfect conditions for life to thrive.
+      Additionally, we will discuss the importance of Earth's atmosphere and its protective ozone layer.</p>
+
+    <h3 style="margin-top: 40px;">4. <span style="color: #2d77fff7">Mars</span>
+    </h3>
+    <img src="/mars.png" style="height: 250px;margin-left: 35%;margin-top:27px;margin-bottom:25px;">
+    <p style="margin-top: 10px;">Mars, often called the "Red Planet," has intrigued scientists for its potential to host life.
+      We will examine its rusty-red surface, polar ice caps, and the evidence of ancient water.
+      Additionally, we will discuss current missions and plans for future exploration and potential colonization.</p>
+
+    <h3 style="margin-top: 40px;">5. <span style="color: #2d77fff7">Jupiter</span>
+    </h3>
+    <img src="/jupiter.png" style="height: 250px;margin-left: 35%;margin-top:27px;margin-bottom:25px;">
+    <p style="margin-top: 10px;">Jupiter is the largest planet in our solar system and a gas giant.
+      We will explore its massive size, powerful storms, and its iconic feature, the Great Red Spot.
+      Additionally, we will discuss Jupiter's many moons, including the four Galilean moons.</p>
+
+    <h3 style="margin-top: 40px;">6. <span style="color: #2d77fff7">Saturn</span>
+    </h3>
+    <img src="/saturn.png" style="height: 250px;margin-left: 35%;margin-top:27px;margin-bottom:25px;">
+    <p style="margin-top: 10px;">Saturn is known for its beautiful and distinct ring system, making it a breathtaking sight.
+      We will study its massive rings, composed of ice particles and rocky debris.
+      Additionally, we will discuss Saturn's unique hexagonal-shaped storm at its north pole.</p>
+
+    <h3 style="margin-top: 40px;">7. <span style="color: #2d77fff7">Uranus</span>
+    </h3>
+    <img src="/uranus.png" style="height: 250px;margin-left: 35%;margin-top:27px;margin-bottom:25px;">
+    <p style="margin-top: 10px;">Uranus is an ice giant with a unique tilt, causing it to rotate on its side.
+      We will examine its blue-green color, frigid temperatures, and its system of rings and moons.
+      Additionally, we will discuss the ongoing study of Uranus and its mysterious characteristics.</p>
+
+
+    <h3 style="margin-top: 40px;">8. <span style="color: #2d77fff7">Neptune</span>
+    </h3>
+    <img src="/neptune.png" style="height: 250px;margin-left: 35%;margin-top:27px;margin-bottom:25px;">
+    <p style="margin-top: 10px;">Neptune is the farthest planet from the Sun and another ice giant in our solar system.
+      We will explore its deep blue color, turbulent atmosphere, and the powerful winds on its surface.
+      Additionally, we will discuss the discovery of Neptune and the Voyager 2 spacecraft's flyby.</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="logout">
+              <img src="/bot.png"><div class="infos"><p>Username: Andrei</p><p>LearnerID: 12345678</p></div>
+            </div>
+            <button>LOG OUT</button> <button id="circ" type="submit" onmouseover="playSound()" > </button>
+          </div>
+          <img src="/light.png" style="height: 170px;width:520px;position: absolute;left:33%;top:51%;margin-bottom:30px;">
+        </div>
+        <br><br><br><br><br><br><br>
+
+
+
+
+     
+
+        </div>
+        
+<script>
+   var audio = document.getElementById("backgroundMusic");
+      audio.volume = 0.1;
+      function filterDivs() {
+  var searchInput = document.getElementById('search-input').value.toLowerCase();
+  var vidCards = document.getElementsByClassName('vidcards');
+
+  for (var i = 0; i < vidCards.length; i++) {
+    var videoTitle = vidCards[i].getAttribute('data-title').toLowerCase();
+    var cardContainer = vidCards[i];
+    
+    if (videoTitle.includes(searchInput)) {
+      cardContainer.style.display = 'block';
+    } else {
+      cardContainer.style.display = 'none';
+    }
+  }
+}
+</script>
+
+        <script>
+
+    const openModalBtn = document.getElementById('open-modal-btn');
+      const modal = document.getElementById('modal');
+      const closeBtn = document.querySelector('.close-btn');
+
+      // Open the modal
+      openModalBtn.addEventListener('click', () => {
+        modal.style.display = 'block';
+      });
+
+      // Close the modal when the user clicks on the close button or outside the modal
+      closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      window.addEventListener('click', (event) => {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      });
+
+
+
+     
+
+   
+        </script>
+        <script src="/cursor.js"></script>
+        <script>
+          // Get a reference to the background music audio element
+        const backgroundMusic = document.getElementById("backgroundMusic");
+        
+        // Function to play the background music
+        function playBackgroundMusic() {
+          backgroundMusic.play();
+        }
+        
+        // Add event listeners for user interactions
+        document.addEventListener("click", playBackgroundMusic);
+        document.addEventListener("keydown", playBackgroundMusic);
+         </script>
+</body>
+</html>

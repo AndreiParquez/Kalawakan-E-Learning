@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>*{
+        margin: 0;
+        padding: 0;
+        color: #ffffff;
+      }
+    
+      .content{
+      
+        overflow: hidden;
+        margin: auto;
+        width: 1200px;
+        height: 700px;
+        background-color: #100020;
+        position: relative;
+        background-image: url('https://res.cloudinary.com/yerevan/image/upload/v1484080037/space_xref1i.jpg');
+      }
+      .content:before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+      }
+      
+      .sun{
+        width: 100px;
+        height: 100px;
+          background: radial-gradient(circle, #ff0f00, #ff6f00, #ffff00);
+          box-shadow: 0px 0px 5px 2px #ffdf00, 0px 0px 7px 3px #ff6f00;
+          z-index: 10;
+          background-image: url("https://res.cloudinary.com/yerevan/image/upload/v1484080038/sun_vcrvuy.gif");
+         
+          background-position-x: -318px;
+          background-position-y: -158px;
+          background-size: 245%;
+      }
+      .sun>img{
+        border-radius: 100%;
+        height: 130px;
+        margin: auto;
+      
+      }
+      
+      .mercury_container{
+        width: 22px;
+        height: 22px;
+        position: absolute;
+      }
+      .gif_mercury{
+          background-position-x: -15px;
+          background-position-y: -3px;
+          background-size: 239%;
+          position: absolute;
+          width: 22px;
+        height: 22px;
+        background-image: url("https://res.cloudinary.com/yerevan/image/upload/v1484080036/mercury_tvm7ik.gif");
+        border-radius: 100%;
+        overflow: hidden;
+      }
+      .shadow_mercury{
+        position: relative;
+        width: 22px;
+        height: 22px;
+      }
+      .shadow_mercury>.light{
+        position: absolute;
+        content: "";
+        display: block;
+        width: 22px;
+        height: 22px;
+        border-radius: 100%;
+        background: linear-gradient(90deg, rgba(255, 150, 100, 0.8),rgba(255, 255, 0, 0.0));
+      }
+      .shadow_mercury>.shadow{
+        content: "";
+        display: block;
+        width: 22px;
+        height: 22px;
+        border-radius: 100%;
+        background: linear-gradient(-90deg, rgba(0, 0, 0, 1),rgba(255, 255, 0, 0.0));
+      }
+      
+      .venus_container{
+        width: 35px;
+        height: 35px;
+        position: absolute;
+      }
+      .gif_venus{
+          background-position-x: -4px;
+          background-position-y: -3px;
+          background-size: 120%;
+          position: absolute;
+          width: 35px;
+        height: 35px;
+        background-image: url("https://res.cloudinary.com/yerevan/image/upload/v1484080037/venus_mllz68.gif");
+        border-radius: 100%;
+      }
+      .shadow_venus{
+        position: relative;
+        width: 35px;
+        height: 35px;
+      }
+      .shadow_venus>.light{
+        position: absolute;
+        content: "";
+        display: block;
+        width: 35px;
+        height: 35px;
+        border-radius: 100%;
+        background: linear-gradient(90deg, rgba(255, 150, 100, 0.8),rgba(255, 255, 0, 0.0));
+      }
+      .shadow_venus>.shadow{
+        content: "";
+        display: block;
+        width: 35px;
+        height: 35px;
+        border-radius: 100%;
+        background: linear-gradient(-90deg, rgba(0, 0, 0, 1),rgba(255, 255, 0, 0.0));
+      }
+      
+      .earth_moon_container{
+        position: absolute;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        height: 50px;
+      }
+      
+      .earth_container{
+        align-self: center;
+        position: relative;
+        z-index: 10;
+      }
+      .gif_earth{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        overflow: hidden;
+      }
+      .gif_earth>img{
+        width: 40px;
+        height: 40px;
+      }
+      .shadow_earth{
+        position: relative;
+        width: 40px;
+        height: 40px;
+      }
+      .shadow_earth>.light{
+        position: absolute;
+        content: "";
+        display: block;
+        width: 38px;
+        height: 38px;
+        left: 2px;
+        top: 1px;
+        border-radius: 100%;
+        background: linear-gradient(90deg, rgba(255, 155, 200, 0.4), rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0));
+      }
+      .shadow_earth>.shadow{
+        content: "";
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        background: linear-gradient(-90deg, rgba(0, 0, 0, 1), rgba(0,0,0,0), rgba(0, 0, 0, 0.0));
+      }
+      
+      .moon_container{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+      }
+      .moon{
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 100%;
+      }
+      .moon>img{
+        position: absolute;
+        width: 8px;
+        height: 8px;
+      }
+      
+      .mars_container{
+        width: 38px;
+        height: 38px;
+        position: absolute;
+      }
+      .gif_mars{
+          background-position-x: -5px;
+          background-position-y: -5px;
+          background-size: 125%;
+          position: absolute;
+          width: 38px;
+        height: 38px;
+        background-image: url("https://res.cloudinary.com/yerevan/image/upload/v1484080036/mars_vvdvoa.gif");
+        border-radius: 100%;
+      }
+      .shadow_mars{
+        position: relative;
+        width: 38px;
+        height: 38px;
+      }
+      .shadow_mars>.light{
+        position: absolute;
+        content: "";
+        display: block;
+        width: 38px;
+        height: 38px;
+        border-radius: 100%;
+        background: linear-gradient(90deg, rgba(255, 150, 100, 0.8),rgba(255, 255, 0, 0.0));
+      }
+      .shadow_mars>.shadow{
+        content: "";
+        display: block;
+        width: 38px;
+        height: 38px;
+        border-radius: 100%;
+        background: linear-gradient(-90deg, rgba(0, 0, 0, 1),rgba(255, 255, 0, 0.0));
+      }
+      
+      .jupiter_container{
+        position: absolute;
+        width: 80px;
+        height: 80px;
+      }
+      .gif_jupiter{
+        position: absolute;
+        width: 80px;
+        height: 80px;
+          border-radius: 100%;
+          overflow: hidden;
+      }
+      .gif_jupiter>img{
+        width: 80px;
+        height: 80px;
+      }
+      .shadow_jupiter{
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      .shadow_jupiter>.light{
+        position: absolute;
+        content: "";
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        background: linear-gradient(90deg, rgba(255, 155, 100, 0.2),rgba(255, 255, 0, 0.0),rgba(255, 255, 0, 0.0));
+      }
+      .shadow_jupiter>.shadow{
+        content: "";
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        background: linear-gradient(-90deg, rgba(0, 0, 0, 0.8),rgba(255, 255, 0, 0.0));
+      }
+      
+      .saturn_ring_container{
+        position: absolute;
+        width: 120px;
+        display: flex;
+        justify-content: center;
+        height: 120px;
+      }
+      
+      .saturn_container{
+        align-self: center;
+        position: relative;
+        width: 55px;
+        height: 55px;
+        z-index: 10;
+      }
+      .gif_saturn{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+          border-radius: 100%;
+          overflow: hidden;
+      }
+      .gif_saturn:before{
+        content: "";
+        position: absolute;
+        display: block;
+        border-radius: 100%;
+        background-color: rgba(255,175,100,0.4);
+        width: 100%;
+        height: 100%;
+      }
+      .gif_saturn>img{
+        width: 100%;
+        height: 100%;
+      }
+      .shadow_saturn{
+        position: relative;
+        width: 55px;
+        height: 55px;
+      }
+      .shadow_saturn>.light{
+        position: absolute;
+        content: "";
+        display: block;
+        width: 55px;
+        height: 55px;
+        left: 2px;
+        top: 1px;
+        border-radius: 100%;
+        background: linear-gradient(90deg, rgba(255, 194, 87, 0.4) rgba(0, 0, 0, 0.0));
+      }
+      .shadow_saturn>.shadow{
+        content: "";
+        display: block;
+        width: 55px;
+        height: 55px;
+        border-radius: 100%;
+        background: linear-gradient(-90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.0));
+      }
+      
+      .ring_container{
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+      }
+      .gif_ring{
+        align-self: center;
+        width: 120px;
+        height: 60px;
+      }
+      .gif_ring>div{
+        width: 100%;
+        height: 50%;
+        overflow: hidden;
+        position: relative;
+      }
+      .gif_ring>div:first-child>img{
+        width: 100%;
+        height: 200%;
+        position: absolute;
+        top: 0;
+      }
+      .gif_ring>div:last-child>img{
+        z-index: 11;
+        width: 100%;
+        height: 200%;
+        position: absolute;
+        bottom: 0;
+      }
+      
+      .uranus_container{
+        position: relative;
+        width: 35px;
+        height: 35px;
+        z-index: 10;
+      }
+      .gif_uranus{
+          background-position-x: -37px;
+          background-position-y: -7px;
+          background-size: 325%;
+          position: absolute;
+          width: 35px;
+          height: 35px;
+        background-image: url("https://res.cloudinary.com/yerevan/image/upload/v1484080037/uranus_ubdhwe.gif");
+        border-radius: 100%;
+          overflow: hidden;
+      }
+      .shadow_uranus{
+        position: relative;
+        width: 35px;
+        height: 35px;
+      }
+      .shadow_uranus>.light{
+        position: absolute;
+        content: "";
+        display: block;
+        width: 35px;
+        height: 35px;
+        border-radius: 100%;
+        background: linear-gradient(90deg, rgba(255, 155, 0, 0.1),rgba(255, 255, 0, 0.0));
+      }
+      .shadow_uranus>.shadow{
+        content: "";
+        display: block;
+        width: 35px;
+        height: 35px;
+        border-radius: 100%;
+        background: linear-gradient(-90deg, rgba(0, 0, 0, 0.8),rgba(255, 255, 0, 0.0));
+      }
+      
+      
+      .neptune_container{
+        width: 22px;
+        height: 22px;
+        position: absolute;
+      }
+      .gif_neptune{
+        background-position-x: -23px;
+          background-position-y: -4px;
+          background-size: 325%;
+        background-image: url("https://res.cloudinary.com/yerevan/image/upload/v1484080036/neptune_byzweb.gif");
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        border-radius: 100%;
+          overflow: hidden;
+      }
+      .shadow_neptune{
+        position: relative;
+        width: 22px;
+        height: 22px;
+      }
+      .shadow_neptune:before{
+        position: absolute;
+        content: "";
+        border-radius: 100%;
+        background-color: rgba(64, 64, 255, 0.1); width: 22px;
+        height: 22px; 
+      }
+      .shadow_neptune>.light{
+        position: absolute;
+        content: "";
+        display: block;
+        width: 22px;
+        height: 22px;
+        border-radius: 100%;
+        background: linear-gradient(90deg, rgba(150, 188, 253, 0.8),rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.0));
+      }
+      .shadow_neptune>.shadow{
+        content: "";
+        display: block;
+        width: 22px;
+        height: 22px;
+        border-radius: 100%;
+        background: linear-gradient(-90deg, rgba(0, 0, 0, 0.8),rgba(255, 255, 0, 0.0));
+      }
+      .circles>div{
+        position: absolute;
+        border-radius: 100%;
+        border: 2px solid rgba(255, 255, 255, 0.332);
+        box-sizing: border-box;
+      }
+      .planet{
+        border-radius: 100%;
+        position: absolute;
+      }
+      
+      
+      .controls{
+       display: none;
+      }
+      .controls>p{
+        display: inline-block;
+        margin: 20px;
+      }
+      
+      button{
+        top: 0;
+        font-size: 25px;
+        padding: 10px 50px;
+        background-color: transparent;
+      }</style>
+</head>
+<body>
+    <div class="content">
+        <div class="circles">
+          <div class="mercury_circle"></div>
+          <div class="venus_circle"></div>
+          <div class="earth_circle"></div>
+          <div class="mars_circle"></div>
+          <div class="saturn_circle"></div>
+          <div class="jupiter_circle"></div>
+          <div class="uranus_circle"></div>
+          <div class="neptune_circle"></div>
+        </div>
+    
+        <div id="planets">
+          <div class="planet sun">
+          </div>
+          <div class="mercury_container">
+              <div class="gif_mercury">
+              </div>
+              <div class="shadow_mercury">
+                <div class="light"></div>
+                <div class="shadow"></div>
+              </div>
+          </div>
+          <div class="venus_container">
+              <div class="gif_venus">
+              </div>
+              <div class="shadow_venus">
+                <div class="light"></div>
+                <div class="shadow"></div>
+              </div><p>Venus</p>
+          </div>
+          <div class="earth_moon_container">
+            <div class="earth_container">
+                <div class="gif_earth">
+                <img src="https://res.cloudinary.com/yerevan/image/upload/v1484080036/earth_saibbo.gif">
+              </div>
+              <div class="shadow_earth">
+                <div class="light"></div>
+                <div class="shadow"></div>
+                
+              </div><p>Earth</p>
+            </div>
+            <div class="moon_container">
+            
+                <div class="moon">
+                  <img src="https://res.cloudinary.com/yerevan/image/upload/v1484080036/moon_nqqsgu.gif">
+                </div>
+              </div>
+          </div>
+          <div class="mars_container">
+              <div class="gif_mars">
+              </div>
+              <div class="shadow_mars">
+                <div class="light"></div>
+                <div class="shadow"></div>
+              </div>
+          </div>
+          <div class="jupiter_container">
+              <div class="gif_jupiter">
+                <img src="https://res.cloudinary.com/yerevan/image/upload/v1484080036/jupiter_cxhuh5.gif">
+              </div>
+              <div class="shadow_jupiter">
+                <div class="light"></div>
+                <div class="shadow"></div>
+              </div>
+          </div>
+          <div class="saturn_ring_container">
+            <div class="saturn_container">
+              <div class="gif_saturn">
+                <img src="https://res.cloudinary.com/yerevan/image/upload/v1484080036/jupiter_cxhuh5.gif">
+              </div>
+              <div class="shadow_saturn">
+                <div class="light"></div>
+                <div class="shadow"></div>
+              </div>
+            </div>
+            <div class="ring_container">
+              <div class="gif_ring">
+                <div>
+                  <img src="https://res.cloudinary.com/yerevan/image/upload/v1484080037/ring_zofwhd.png">
+                </div>
+                <div>
+                  <img src="https://res.cloudinary.com/yerevan/image/upload/v1484080037/ring_zofwhd.png">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="uranus_container">
+              <div class="gif_uranus">
+              </div>
+              <div class="shadow_uranus">
+                <div class="light"></div>
+                <div class="shadow"></div>
+              </div>
+          </div>
+          <div class="neptune_container">
+              <div class="gif_neptune">
+              </div>
+              <div class="shadow_neptune">
+                <div class="light"></div>
+                <div class="shadow"></div>
+              </div>
+          </div>
+        </div>
+      
+      <div class="controls">
+          <button id="stop">Stop</button>
+          <button id="start">Start</button>
+        <p>Grab and move mouse verticaly to change perspective</p>
+      </div>
+    
+      </div>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script>
+            var content = document.getElementsByClassName('content')[0];
+var width = content.offsetWidth;
+var height = content.offsetHeight;
+var verticalKaificent = 0.2;
+  deltaMerc = 0;
+  deltaVenus = 0;
+  deltaEarth = 0;
+  deltaMars = 0;
+  deltaJupiter = 0;
+  deltaSaturn = 0;
+  deltaUranus = 0;
+  deltaNeptune = 0;
+  deltaMoon = 0;
+  n = 20;
+spacePosition();
+drawCircles();
+scaleHandler();
+$(window).scrollTop($(window).height());
+$(window).scrollLeft($(window).width()/2);
+
+var timerId;
+var $mercuryContainer = $('.mercury_container').eq(0);
+var mercuryX = width/2 - mercuryContainer.offsetWidth /2;
+var mercuryY = height/2 - mercuryContainer.offsetHeight /2;
+var mercury = $('.shadow_mercury').eq(0); 
+
+var $venusContainer = $('.venus_container').eq(0);
+var venusX = width/2 - venusContainer.offsetWidth /2;
+var venusY = height/2 - venusContainer.offsetHeight /2;
+var venus = $('.shadow_venus').eq(0); 
+
+var $earthMoonContainer = $('.earth_moon_container').eq(0);
+var earthX = width/2 - earthMoonContainer.offsetWidth /2;
+var earthY = height/2 - earthMoonContainer.offsetHeight /2;
+var earth = $('.shadow_earth').eq(0); 
+
+var $moon = $('.moon').eq(0);
+var moonX = earthMoonContainer.offsetWidth /2  - moon.offsetWidth/2;
+var moonY = earthMoonContainer.offsetHeight /2 - moon.offsetHeight/2;
+
+var $marsContainer = $('.mars_container').eq(0);
+var marsX = width/2 - marsContainer.offsetWidth /2;
+var marsY = height/2 - marsContainer.offsetHeight /2;
+var mars = $('.shadow_mars').eq(0); 
+
+var $jupiterContainer = $('.jupiter_container').eq(0);
+var jupiterX = width/2 - jupiterContainer.offsetWidth /2;
+var jupiterY = height/2 - jupiterContainer.offsetHeight /2;
+var jupiter = $('.shadow_jupiter').eq(0); 
+
+
+var $saturnRingContainer = $('.saturn_ring_container').eq(0);
+var saturnX = width/2 - saturnRingContainer.offsetWidth /2;
+var saturnY = height/2 - saturnRingContainer.offsetHeight /2;
+var saturn = $('.shadow_saturn').eq(0); 
+
+var $ringContainer = $('.ring_container').eq(0);
+
+var $uranusContainer = $('.uranus_container').eq(0);
+var uranusX = width/2 - uranusContainer.offsetWidth /2;
+var uranusY = height/2 - uranusContainer.offsetHeight /2;
+var uranus = $('.shadow_uranus').eq(0); 
+
+var $neptuneContainer = $('.neptune_container').eq(0);
+var neptuneX = width/2 - neptuneContainer.offsetWidth /2;
+var neptuneY = height/2 - neptuneContainer.offsetHeight /2;
+var neptune = $('.shadow_neptune').eq(0); 
+
+function spacePosition(){
+  sun = document.getElementsByClassName('sun')[0];
+
+  sun.style.top = (height/2 - sun.offsetHeight /2 ) + 'px';
+  sun.style.left = (width/2 - sun.offsetWidth /2 ) + 'px';
+
+  mercuryContainer = document.getElementsByClassName('mercury_container')[0];
+  Rmercury = 90;
+  mercuryContainer.style.top = (height/2 - mercuryContainer.offsetHeight /2 ) + 'px';
+  mercuryContainer.style.left = (width/2 - mercuryContainer.offsetWidth /2 + Rmercury ) + 'px';
+
+  venusContainer = document.getElementsByClassName('venus_container')[0];
+  Rvenus = 130;
+  venusContainer.style.top = (height/2 - venusContainer.offsetHeight /2 ) + 'px';
+  venusContainer.style.left = (width/2 - venusContainer.offsetWidth /2 + Rvenus ) + 'px';
+
+  earthMoonContainer = document.getElementsByClassName('earth_moon_container')[0];
+  Rearth = 185;
+  earthMoonContainer.style.top = (height/2 - earthMoonContainer.offsetHeight /2 ) + 'px';
+  earthMoonContainer.style.left = (width/2 - earthMoonContainer.offsetWidth /2 + Rearth ) + 'px';
+  
+  moon = document.getElementsByClassName('moon')[0];
+  Rmoon = 28;
+  moon.style.top = (earthMoonContainer.offsetHeight /2  - moon.offsetHeight/2) + 'px';
+  moon.style.left = (earthMoonContainer.offsetWidth /2 - moon.offsetWidth/2 + Rmoon ) + 'px';
+
+  marsContainer = document.getElementsByClassName('mars_container')[0];
+  Rmars = 240;
+  marsContainer.style.top = (height/2 - marsContainer.offsetHeight /2 ) + 'px';
+  marsContainer.style.left = (width/2 - marsContainer.offsetWidth /2 + Rmars ) + 'px';
+
+  jupiterContainer = document.getElementsByClassName('jupiter_container')[0];
+  Rjupiter = 320;
+  jupiterContainer.style.top = (height/2 - jupiterContainer.offsetHeight /2 ) + 'px';
+  jupiterContainer.style.left = (width/2 - jupiterContainer.offsetWidth /2 + Rjupiter ) + 'px';
+
+  Rsaturn = 430;
+  saturnRingContainer = document.getElementsByClassName('saturn_ring_container')[0];
+  saturnRingContainer.style.top = (height/2 - saturnRingContainer.offsetHeight /2 ) + 'px';
+  saturnRingContainer.style.left = (width/2 - saturnRingContainer.offsetWidth /2 + Rsaturn ) + 'px';
+  Rring = 60;
+
+  uranusContainer = document.getElementsByClassName('uranus_container')[0];
+  Ruranus = 510;
+  uranusContainer.style.top = (height/2 - uranusContainer.offsetHeight /2 ) + 'px';
+  uranusContainer.style.left = (width/2 - uranusContainer.offsetWidth /2 + Ruranus ) + 'px';
+
+  neptuneContainer = document.getElementsByClassName('neptune_container')[0];
+  Rneptune = 560;
+  neptuneContainer.style.top = (height/2 - neptuneContainer.offsetHeight /2 ) + 'px';
+  neptuneContainer.style.left = (width/2 - neptuneContainer.offsetWidth /2 + Rneptune ) + 'px';
+}
+var start =  document.getElementById('start');
+start.onclick = function(){
+  timerId = setInterval(move, 20);
+};
+var stop =  document.getElementById('stop');
+stop.onclick = function(){
+  clearInterval(timerId);
+};
+function move(){
+  moveEarth();
+  moveMercury();
+  moveVenus();
+  moveMars();
+  moveJupiter();
+  moveSaturn();
+  moveUranus();
+  moveNeptune();
+  moveMoon(); 
+}
+function moveMercury(){
+    var alpha = Math.PI*deltaMerc/180;
+  $mercuryContainer.css('top', mercuryY + Rmercury * Math.sin(alpha)* verticalKaificent);
+  $mercuryContainer.css('left', mercuryX + Rmercury * Math.cos(alpha));
+  mercury.css('transform','rotate(' + deltaMerc + 'deg)');
+  if (deltaMerc<180) {
+    $mercuryContainer.css('z-index', 11);
+  }else{
+    $mercuryContainer.css('z-index', 9);
+  }
+  deltaMerc+=47.87/n; 
+  if(deltaMerc>360){deltaMerc-=360;}
+}
+function moveVenus(){
+    var alpha = Math.PI*deltaVenus/180;
+  $venusContainer.css('top', venusY + Rvenus * Math.sin(alpha)* verticalKaificent);
+  $venusContainer.css('left', venusX + Rvenus * Math.cos(alpha));
+
+  venus.css('transform','rotate(' + deltaVenus + 'deg)');
+  if (deltaVenus<180) {
+    $venusContainer.css('z-index', 12);
+  }else{
+    $venusContainer.css('z-index', 8);
+  }
+  deltaVenus+=35.02/n;  
+  if(deltaVenus>360){deltaVenus-=360;}
+}
+function moveEarth(){
+    var alpha = Math.PI*deltaEarth/180;
+  $earthMoonContainer.css('top', earthY + Rearth * Math.sin(alpha)* verticalKaificent);
+  $earthMoonContainer.css('left', earthX + Rearth * Math.cos(alpha));
+  earth.css('transform','rotate(' + deltaEarth + 'deg)');
+  if ((deltaEarth<180)) {
+    $earthMoonContainer.css('z-index', 13);
+  }else{
+    $earthMoonContainer.css('z-index', 7);
+  }
+  deltaEarth+=29.78/n;  
+  if(deltaEarth>360){deltaEarth-=360;}
+}
+function moveMoon(){
+    var alpha = Math.PI*deltaMoon/180;
+  $moon.css('top', moonY + Rmoon * Math.sin(alpha)* verticalKaificent);
+  $moon.css('left', moonX + Rmoon * Math.cos(alpha));
+  if (deltaMoon<180) {
+    $moon.css('z-index', 11);
+  }else{
+    $moon.css('z-index', 9);
+  }
+  deltaMoon += 340/n;
+  if(deltaMoon>360){deltaMoon-=360;}
+}
+function moveMars(){
+    var alpha = Math.PI*deltaMars/180;
+  $marsContainer.css('top', marsY + Rmars * Math.sin(alpha)* verticalKaificent);
+  $marsContainer.css('left', marsX + Rmars * Math.cos(alpha));
+  mars.css('transform','rotate(' + deltaMars + 'deg)');
+  if (deltaMars<180) {
+    $marsContainer.css('z-index', 14);
+  }else{
+    $marsContainer.css('z-index', 6);
+  }
+  deltaMars+=24.077/n;  
+  if(deltaMars>360){deltaMars-=360;}
+}
+function moveJupiter(){
+  var obj = $('.jupiter_container').eq(0);  
+    var alpha = Math.PI*deltaJupiter/180;
+  $jupiterContainer.css('top', jupiterY + Rjupiter * Math.sin(alpha)* verticalKaificent);
+  $jupiterContainer.css('left', jupiterX + Rjupiter * Math.cos(alpha));
+  jupiter.css('transform','rotate(' + deltaJupiter + 'deg)');
+  if (deltaJupiter<180) {
+    $jupiterContainer.css('z-index', 15);
+  }else{
+    $jupiterContainer.css('z-index', 5);
+  }
+  deltaJupiter += 13.07/n;  
+  if(deltaJupiter>360){deltaJupiter-=360;}
+}
+function moveSaturn(){
+    var alpha = Math.PI*deltaSaturn/180;
+  $saturnRingContainer.css('top', saturnY + Rsaturn * Math.sin(alpha)* verticalKaificent);
+  $saturnRingContainer.css('left', saturnX + Rsaturn * Math.cos(alpha));
+  saturn.css('transform','rotate(' + deltaSaturn + 'deg)');
+  if (deltaSaturn<180){
+    $saturnRingContainer.css('z-index', 16);
+  }else{
+    $saturnRingContainer.css('z-index', 4);
+  }
+  deltaSaturn += 9.69/n;  
+  if(deltaSaturn>360){deltaSaturn-=360;}
+}
+function moveUranus(){
+    var alpha = Math.PI*deltaUranus/180;
+  $uranusContainer.css('top', uranusY + Ruranus * Math.sin(alpha)* verticalKaificent);
+  $uranusContainer.css('left', uranusX + Ruranus * Math.cos(alpha));
+  uranus.css('transform','rotate(' + deltaUranus + 'deg)');
+  if (deltaUranus<180){
+    $uranusContainer.css('z-index', 17);
+  }else{
+    $uranusContainer.css('z-index', 3);
+  }
+  deltaUranus+=6.81/n;  
+  if(deltaUranus>360){deltaUranus-=360;}
+}
+function moveNeptune(){
+    var alpha = Math.PI*deltaNeptune/180;
+  $neptuneContainer.css('top', neptuneY + Rneptune * Math.sin(alpha)* verticalKaificent);
+  $neptuneContainer.css('left', neptuneX + Rneptune * Math.cos(alpha));
+  uranus.css('transform','rotate(' + deltaNeptune + 'deg)');
+  if (deltaNeptune<180){
+    $neptuneContainer.css('z-index', 17);
+  }else{
+    $neptuneContainer.css('z-index', 3);
+  }
+  deltaNeptune+=5.43/n; 
+  if(deltaNeptune>360){deltaNeptune-=360;}
+}
+function drawCircles(){
+  var mercuryCircle = $('.mercury_circle').eq(0);
+  mercuryCircle.css('left', width/2 - Rmercury);
+  mercuryCircle.css('top', height/2 - Rmercury*verticalKaificent);
+  mercuryCircle.css('width', Rmercury*2);
+  mercuryCircle.css('height', Rmercury*2*verticalKaificent);
+
+  var venusCircle = $('.venus_circle').eq(0);
+  venusCircle.css('left', width/2 - Rvenus);
+  venusCircle.css('top', height/2 - Rvenus*verticalKaificent);
+  venusCircle.css('width', Rvenus*2);
+  venusCircle.css('height', Rvenus*2*verticalKaificent);
+
+  var earthCircle = $('.earth_circle').eq(0);
+  earthCircle.css('left', width/2 - Rearth);
+  earthCircle.css('top', height/2 - Rearth*verticalKaificent);
+  earthCircle.css('width', Rearth*2);
+  earthCircle.css('height', Rearth*2*verticalKaificent);
+
+  var marsCircle = $('.mars_circle').eq(0);
+  marsCircle.css('left', width/2 - Rmars);
+  marsCircle.css('top', height/2 - Rmars*verticalKaificent );
+  marsCircle.css('width', Rmars*2);
+  marsCircle.css('height', Rmars*2*verticalKaificent);
+
+  var jupiterCircle = $('.jupiter_circle').eq(0);
+  jupiterCircle.css('left', width/2 - Rjupiter);
+  jupiterCircle.css('top', height/2 - Rjupiter*verticalKaificent);
+  jupiterCircle.css('width', Rjupiter*2);
+  jupiterCircle.css('height', Rjupiter*2*verticalKaificent);
+
+  var saturnCircle = $('.saturn_circle').eq(0);
+  saturnCircle.css('left', width/2 - Rsaturn);
+  saturnCircle.css('top', height/2 - Rsaturn*verticalKaificent);
+  saturnCircle.css('width', Rsaturn*2);
+  saturnCircle.css('height', Rsaturn*2*verticalKaificent);
+  
+  var saturnRing = $('.gif_ring').eq(0);
+  saturnRing.css('height', Rring*2* verticalKaificent);
+
+  var uranusCircle = $('.uranus_circle').eq(0);
+  uranusCircle.css('left', width/2 - Ruranus);
+  uranusCircle.css('top', height/2 - Ruranus*verticalKaificent);
+  uranusCircle.css('width', Ruranus*2);
+  uranusCircle.css('height', Ruranus*2*verticalKaificent);
+
+  var neptuneCircle = $('.neptune_circle').eq(0);
+  neptuneCircle.css('left', width/2 - Rneptune);
+  neptuneCircle.css('top', height/2 - Rneptune*verticalKaificent);
+  neptuneCircle.css('width', Rneptune*2);
+  neptuneCircle.css('height', Rneptune*2*verticalKaificent);
+}
+
+function scaleHandler(){
+  
+ var currentMousePos = { x: -1, y: -1 };
+ var isDragged = false;
+
+ $(document).mousemove(function(event) {
+    if(!isDragged){
+        currentMousePos.x = event.pageX;
+        currentMousePos.y = event.pageY;
+    }
+    else{
+      delta = (event.pageY - currentMousePos.y)/10000 + verticalKaificent;
+      if( delta <= 1 && delta >=0 ){
+      verticalKaificent = delta;}
+      drawCircles();
+    $mercuryContainer.css('top', mercuryY + Rmercury * Math.sin(Math.PI*deltaMerc/180)* verticalKaificent);
+    $venusContainer.css('top', venusY + Rvenus * Math.sin(Math.PI*deltaVenus/180)* verticalKaificent);
+    $earthMoonContainer.css('top', earthY + Rearth * Math.sin(Math.PI*deltaEarth/180)* verticalKaificent);
+    $moon.css('top', moonY + Rmoon * Math.sin(Math.PI*deltaMoon/180)* verticalKaificent);
+
+    $marsContainer.css('top', marsY + Rmars * Math.sin(Math.PI*deltaMars/180)* verticalKaificent);
+    $jupiterContainer.css('top', jupiterY + Rjupiter * Math.sin(Math.PI*deltaJupiter/180)* verticalKaificent);
+    $saturnRingContainer.css('top', saturnY + Rsaturn * Math.sin(Math.PI*deltaSaturn/180)* verticalKaificent);
+    $uranusContainer.css('top', uranusY + Ruranus * Math.sin(Math.PI*deltaUranus/180)* verticalKaificent);
+    $neptuneContainer.css('top', neptuneY + Rneptune * Math.sin(Math.PI*deltaNeptune/180)* verticalKaificent);
+    }
+});
+
+$(document).mousedown(function() {  
+  isDragged = true;
+  $('body').css('cursor','-webkit-grabbing');
+});
+
+$(document).mouseup(function() {
+  isDragged = false;
+  $('body').css('cursor','-webkit-grab');
+});
+};
+$(document).ready(function(){
+  start.click();
+});
+
+        </script>
+</body>
+</html>

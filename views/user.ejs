@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K A L A W A K A N - E learning
+    </title>
+
+
+    <style>
+        @font-face {
+  font-family: "myfont";
+  src: url("modern\ M.ttf");
+}
+*{
+  cursor: none;
+}
+        body{
+  font-family:Roboto;
+background-image: url('/19651.jpg');
+  font-family: "myfont";    
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.834);          
+}
+
+.transition {
+  transition: all 0.2s linear;
+}
+
+.perspective_container {
+  margin-top:13%;
+  position:relative;
+  perspective: 1000px; 
+  perspective-origin: center center;
+  position:relative;
+  max-width:500px;
+  width:90%;
+}
+
+.table {
+  width:100%;
+  backdrop-filter: blur(2px);
+  box-shadow: rgba(0, 145, 255, 0.408) 0px 5px 15px;
+    border: 3px solid rgba(213, 213, 213, 0.719);
+  border-radius:15px; 
+  transform:rotateX(25deg) rotateZ(0deg) rotateY(0deg);
+  
+}
+
+.menu {
+  position:absolute;
+  top:20%;
+  left:-10%;
+  transform:rotateX(15deg);
+  
+}
+
+.menu>.item {
+  position:relative; 
+  color:#ffffff;
+  background: rgba(40, 122, 255, 0.118);
+  border:solid 1px #ffffff;
+  border-radius:5px; 
+  padding:6%;
+  margin:6%;
+  transform:rotateX(15deg);
+
+  height: 20px;
+  width: 120px;
+}
+
+.menu>.item a{
+    color: #fffbfb;
+}
+
+
+
+.menu>.item:hover { 
+  background:#256eb1ad;
+  color: #000000;
+}
+.card {
+  padding:2%;
+  max-width:200px;
+  background: rgba(40, 122, 255, 0.07);
+  border:solid 1px #ffffff; 
+  border-radius:10px;
+  transform:rotateX(15deg);
+}
+
+.card>p {
+  margin-top:10%;
+  color: #ffffff;
+}
+
+.card>.log {
+  border-radius:10px;
+  border:solid 1px rgba(129, 124, 124, 0.7); 
+}
+input{
+    border:1px solid #fff;
+    background: none;
+    height: 32px;
+    width: 171px;
+    margin-top: 10px;
+    color: #fff;
+    border-radius: 5px;
+}
+.inputs{
+    margin-top: 20px;
+    text-align: center;
+    
+}
+input[type="text"], [type="password"]{
+text-align: center;
+  color: #e7e7e7;
+  
+}
+::placeholder{
+    color: #a5a5a5;
+    text-align: center;
+}
+button{
+    margin-top: 10px;
+  border: 0.5vw rgb(64, 133, 245) dashed;
+  /* border-style: ; */
+  background-color: transparent;
+  border-radius: 50%;
+  
+  bottom: 8vw;
+  right: 8vw;
+  width: 3.5vw;
+  height: 3.5vw;
+  opacity: 0.8;
+  font-size: 3vw;
+  animation: spin 10s linear infinite;
+}
+button:hover
+{
+  background-color: rgb(0, 60, 156) ;
+  cursor: pointer;
+}
+@keyframes rotate360 {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes spin
+{
+  0% { transform: rotate(0deg) translateZ(2vw);}
+  100% { transform: rotate(360deg) translateZ(2vw);}
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+    </style>
+     <link rel="icon" type="image/x-icon" href="/i.png">
+      <link rel="stylesheet" href="/star.css">
+    <link rel="stylesheet" href="/cursor.css">
+</head>
+<body>
+  <div class="bg"></div>
+
+  <div class="star-field">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    </div>
+
+
+  
+    <center><form method="POST" action="/login">
+        <div class="perspective_container">
+         <div class="table">
+          <div class="card slide_down">
+           <div class="log" style="max-width:200px;height:250px;width:200px;">
+            <div class="inputs">
+                <img src="bot.png" style="height: 40px;">
+ 
+                <p style="color: #fff;">Welcome to Kalawakan</p>
+            <input type="text" name="username" placeholder="username">
+            <input type="password" name="password" placeholder="password">
+        </div>
+        
+        
+           </div>
+            <button type="submit" onmouseover="playSound()" > </button>
+          </div>
+          <div class="menu">
+           <div class="item transition" style="background-color: rgb(40, 123, 255);"><a href="" style="text-decoration: none;color:#ffffff;">User</a></div> 
+           <div class="item transition"><a href="/admin" style="text-decoration: none;color: #ffffff;">Admin</a></div> 
+           <div class="item transition"><a href="/new" style="text-decoration: none;color: #ffffff;">Register</a></div> 
+       
+          </div>
+         </div>  
+        </div></form>
+        <audio id="backgroundMusic" autoplay loop>
+          <source src="/bg.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <p style="margin-top:30px;color: #b0afaf;font-weight: bold;font-size: 13px;">Final Project in <span style="color: rgb(0, 179, 255);">ITEC60</span> & <DCIT55 style="color: rgb(0, 179, 255);">DCIT55</p>
+      <p style="font-size:14px;color: rgb(81, 203, 255);animation: blink .01s infinite,float 3s ease-in-out infinite,rotate360 6s linear infinite;">Andrei Parquez<br>Phoebe Labanon<br>Marc Serrano<br>Rica Maghari</p>
+          <img src="/light.png" style="height: 190px;position: absolute;bottom: 0;left:43.3%;margin-bottom:10px;animation: blink .01s infinite;">
+         
+        </center>
+ <script src="/cursor.js"></script><script>
+// Get a reference to the background music audio element
+const backgroundMusic = document.getElementById("backgroundMusic");
+var audio = document.getElementById("backgroundMusic");
+      audio.volume = 0.1;
+// Function to play the background music
+function playBackgroundMusic() {
+  backgroundMusic.play();
+}
+
+// Add event listeners for user interactions
+document.addEventListener("click", playBackgroundMusic);
+document.addEventListener("keydown", playBackgroundMusic);
+
+function playSound() {
+  var audio = new Audio('/click.wav');
+  audio.play();
+}
+
+
+
+
+
+ </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Typing Animation with Caret</title>
+  <style>
+    .body{
+      width: 100%;
+  height: 600px;
+      background-color: black;
+      background-image: url("space.jpg");
+      background-repeat: repeat-x;
+  animation: moveBg 5s linear infinite;
+  z-index: -10;
+    }
+    #typing-text {
+      color: #fff;
+      font-size: 28px;
+      font-family: monospace;
+ font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      z-index: 10;
+    }
+
+    .caret {
+      display: inline-block;
+      width: 5px;
+      height: 28px;
+      background-color: rgb(255, 255, 255);
+      animation: blink-caret 0.8s infinite;
+    }
+    @keyframes moveBg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+    @keyframes blink-caret {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    .con{
+      position: absolute;
+      top: 35%;
+      left: 41%;
+
+    }
+    .con p{
+    margin-top: 100px;
+    z-index: 10;
+    }
+    img{
+      animation:move 5s linear infinite;
+      position: absolute;
+      height: 220px;
+      background: none;
+      z-index: 0;
+      top: 37%;
+      left: 40%;
+    }
+    @keyframes move {
+  0% {
+    transform: translateX(-500px) rotate(0deg);
+   
+  }
+  100% {
+    transform: translateX(500px) rotate(360deg);
+    
+  }
+}
+    @keyframes rotation {
+  0% {
+    
+  }
+  100% {
+    
+  }
+}
+  </style>
+</head>
+<body>
+ <div class="body">
+  <img id="myImage" src="a.png" alt="Image" />
+  <div class="con">
+   
+
+  <p>
+    <span id="typing-text"></span>
+    <span class="caret"></span>
+  </p>
+</div>
+</div>
+  <script>
+    const texts = ["Andrei is a Developer.", "Pheobe is also a Developer.", "Rica is also a Developer.", "Marc is also a Developer."]; // Array of text values
+const typingSpeed = 100; // Adjust the speed (in milliseconds) to control the typing speed
+const typingText = document.getElementById("typing-text");
+const caret = document.querySelector(".caret");
+let charIndex = 0;
+let textIndex = 0;
+
+function type() {
+  if (charIndex < texts[textIndex].length) {
+    typingText.innerHTML += texts[textIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingSpeed);
+  } else {
+    caret.style.display = "none"; // Hide the caret when typing is finished
+    setTimeout(erase, 2000); // Wait for 1.5 seconds before erasing the text
+  }
+}
+
+function erase() {
+  if (charIndex > 0) {
+    typingText.innerHTML = texts[textIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, typingSpeed / 2);
+  } else {
+    textIndex++;
+    if (textIndex >= texts.length) {
+      textIndex = 0; // Restart from the beginning if all texts have been displayed
+    }
+    setTimeout(type, typingSpeed / 4); // Wait for 0.5 seconds before typing the next text
+  }
+}
+
+type();
+  </script>
+  <script>const imageSources = ["a.png", "image2.jpg", "image3.jpg", "image4.jpg"]; // Array of image sources
+    const image = document.getElementById("myImage");
+    let imageIndex = 0;
+    
+    function changeImage() {
+      image.src = imageSources[imageIndex];
+      imageIndex = (imageIndex + 1) % imageSources.length; // Cycle through the image sources
+    
+      setTimeout(changeImage, 5000); // Change image after 5 seconds (5000 milliseconds)
+    }
+    
+    changeImage(); // Start the image slideshow
+    
+    </script>
+</body>
+</html>

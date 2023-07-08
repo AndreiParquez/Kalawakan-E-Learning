@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> K A L A W A K A N - E learning</title>
+  <style>
+@font-face {
+    font-family: "myfont";
+    src: url("/modern\ M.ttf");
+  }
+  body{
+    background-color: #070110;
+  }
+  table {
+    margin-top: 10px;
+      border-collapse: separate;
+      width: 220px;
+      margin-left: 10%;
+      font-size: 20px;
+      border-spacing: 20px;
+    }
+
+    td {
+      padding: 10px;
+      text-align: center;
+      height: 100px;
+      border: 1px solid #fff;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+    }
+    td:hover{
+        background-color: #00a2ffb5;
+     
+        transition: 1.2s;
+    }
+    .main-content{
+
+  height: 900px;
+      background-color: black;
+      background-image: url("/space.jpg");
+      background-repeat: repeat-x;
+  animation: moveBg 9s linear infinite;
+     padding: 1px;
+    }
+    .body{
+        height: 570px;
+        background-color: #070110c5;
+    }
+.moon{
+   
+      height: 410px;
+}
+a{
+  text-decoration: none;
+}
+h1{
+    font-size: 45px;
+}
+.main-content img{
+    height: 290px;
+}
+#typing-text {
+      color: #fff;
+      font-size: 28px;
+      font-family: monospace;
+ font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      z-index: 10;
+    }
+
+    .caret {
+      display: inline-block;
+      width: 5px;
+      height: 28px;
+      background-color: rgb(255, 255, 255);
+      animation: blink-caret 0.8s infinite;
+    }
+    @keyframes moveBg {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+    @keyframes blink-caret {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    .con{
+      position: absolute;
+      top: 26%;
+      left: 39%;
+
+    }
+    .con p{
+    margin-top: 100px;
+    z-index: 10;
+    }
+     #myImage{
+      animation:move 6s linear infinite;
+      position: absolute;
+      height: 200px;
+      background: none;
+      z-index: 0;
+      top: 28%;
+      left: 40%;
+    }
+    @keyframes move {
+  0% {
+    transform: translateX(-500px) rotate(0deg);
+   
+  }
+  100% {
+    transform: translateX(500px) rotate(360deg);
+    
+  }
+}
+    @keyframes rotation {
+  0% {
+    
+  }
+  100% {
+    
+  }
+}
+.devs{
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  padding: 30px;
+  margin-bottom: 60px;
+}
+.dev{
+  width: 290px;
+  text-align: center;
+}
+  </style>
+
+ <link rel="icon" type="image/x-icon" href="/i.png">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/cursor.css">
+    
+</head>
+<body>  <audio id="backgroundMusic" autoplay loop volume="0">
+  <source src="/bg.mp3" type="audio/mpeg" volume="0">
+  Your browser does not support the audio element.
+</audio>
+<audio id="backgroundMusi" autoplay loop volume="0" >
+  <source src="/among.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+  <div class="bg"></div>
+
+  <div class="star-field">
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  </div>
+
+
+
+    <div class="sidebar">
+      <div class="logo"></div>
+        <div class="side">
+            
+        <ul>
+          <li><a href="/dashboard"><img src="/home.svg">Home</a></li>
+          <li ><a href="/courses"><img src="/note.svg">Courses</a></li>
+          <li><a href="/lessons"><img src="/p.svg">Resources</a></li>
+          <li><a href="/solar"><img src="/planet.svg">Models</a></li>
+          <li><a href="/act"><img src="/galaxy-svgrepo-com.svg">Activities</a></li>   
+          <li><a href="/quiz"><img src="/pen-.svg">Quiz</a></li>
+          
+          <li><a href="/videos"><img src="/video.svg">Videos</a></li>
+          <li  class="active"><a href="/dev"><img src="/team.svg">Devs</a></li>
+      
+        </ul></div>
+        <img src="/light.png" style="height:80px;width:300px;bottom:0;left:-40px;position:absolute;margin-bottom: 13px;">
+
+      </div>
+
+      <nav>
+        <div class="logo">
+          <img src="bot.png"><div class="tit">
+            <p>K A L A W A K A N <br>E - Learning Web</p>
+          </div>
+        </div>
+       <div class="account">
+        <p>Account</p><img src="/acc.svg" id="open-modal-btn">
+       </div>
+      </nav>
+
+
+      <div class="main-content">
+        <p style="text-align: center;font-size: 39px;font-weight: bolder;filter: drop-shadow( 10px 10px 10px rgba(59, 157, 255, 0.696));">K A L A W A K A N</p>
+        <p style="text-align: center;font-size: 20px;color: #0073ff;font-weight: bold;">D E V E L O P E R S</p><p style="text-align: center;font-size: 12px;">All Rights Reserved 2023</p>
+        <div class="body">
+            <img id="myImage" src="/dev.png" alt="Image" />
+            <div class="con">
+             
+          
+            <p>
+              <span id="typing-text"></span>
+              <span class="caret"></span>
+            </p>
+          </div>
+          <div class="devs">
+            <div class="dev">
+          <P style="font-size: 21px;color: #ffffff;font-weight: bold;margin-bottom: 3px;filter: drop-shadow( 10px 10px 10px rgba(230, 230, 230, 0.696));">Andrei R. Parquez</P>
+          <p>"Gamer"</p>
+          <br>
+          <div style="text-align: center;">
+          <p>Student at CVSU Bacoor</p>
+          <p>21 Years Old</p>
+          <p>Loves playing games</p>
+        <p>@andreiparqz</p></div>
+          </div>
+          <div class="dev">
+          <P style="font-size: 21px;color: #f2ff00;font-weight: bold;margin-bottom: 3px;filter: drop-shadow( 10px 10px 10px rgba(255, 255, 1, 0.696));">Phoebe Kates Labanon</P>
+          <p>"Mommy Oni"</p>
+          <br>
+          <div style="text-align: center;">
+          <p>Student at CVSU Bacoor</p>
+          <p>23 Years Old</p>
+          <p>Loves to sleep</p></div>
+          </div>
+           <div class="dev">
+          <P style="font-size: 21px;color: #ff00bf;font-weight: bold;margin-bottom: 3px;filter: drop-shadow( 10px 10px 10px rgba(217, 0, 255, 0.696));">Rica Mae Maghari</P>
+          <p>"Madam"</p>
+          <br>
+          <div style="text-align: center;">
+          <p>Student at CVSU Bacoor</p>
+          <p>21 Years Old</p>
+          <p>Loves to paint</p></div>
+          </div>
+          <div class="dev">
+          <P style="font-size: 21px;color: #098600;font-weight: bold;margin-bottom: 3px;filter: drop-shadow( 10px 10px 10px rgba(0, 255, 9, 0.696));">Marc S. Serrano</P>
+          <p>"Campus Crush"</p>
+          <br>
+          <div style="text-align: center;">
+          <p>Student at CVSU Bacoor</p>
+          <p>21 Years Old</p>
+          <p>Loves to drive motor </p></div>
+          </div>
+          </div>
+          </div>
+
+        </div>
+
+
+
+
+        </div>
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="logout">
+              <img src="/bot.png"><div class="infos"><p>Username: Andrei</p><p>LearnerID: 12345678</p></div>
+            </div>
+            <button>LOG OUT</button> <button id="circ" type="submit" onmouseover="playSound()" > </button>
+          </div>
+          <img src="/light.png" style="height: 170px;width:520px;position: absolute;left:33%;top:51%;margin-bottom:30px;">
+        </div>
+        <br><br><br><br><br><br><br>
+
+
+
+
+     
+
+        </div>
+        <script>
+            const texts = ["Andrei R. Parquez.", "Phoebe Labanon.", "Rica Mae Maghari.", "Marc Serrano."]; // Array of text values
+        const typingSpeed = 100; // Adjust the speed (in milliseconds) to control the typing speed
+        const typingText = document.getElementById("typing-text");
+        const caret = document.querySelector(".caret");
+        let charIndex = 0;
+        let textIndex = 0;
+        
+        function type() {
+          if (charIndex < texts[textIndex].length) {
+            typingText.innerHTML += texts[textIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(type, typingSpeed);
+          } else {
+            caret.style.display = "none"; // Hide the caret when typing is finished
+            setTimeout(erase, 3000); // Wait for 1.5 seconds before erasing the text
+          }
+        }
+        
+        function erase() {
+          if (charIndex > 0) {
+            typingText.innerHTML = texts[textIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(erase, typingSpeed / 2);
+          } else {
+            textIndex++;
+            if (textIndex >= texts.length) {
+              textIndex = 0; // Restart from the beginning if all texts have been displayed
+            }
+            setTimeout(type, typingSpeed / 6); // Wait for 0.5 seconds before typing the next text
+          }
+        }
+        
+        type();
+          </script>
+          <script>const imageSources = ["dev.png", "dev2.png", "dev3.png", "dev4.png"]; // Array of image sources
+            const image = document.getElementById("myImage");
+            let imageIndex = 0;
+            
+            function changeImage() {
+              image.src = imageSources[imageIndex];
+              imageIndex = (imageIndex + 1) % imageSources.length; // Cycle through the image sources
+            
+              setTimeout(changeImage, 6140); // Change image after 5 seconds (5000 milliseconds)
+            }
+            
+            changeImage(); // Start the image slideshow
+            
+            </script>
+<script>
+   var audio = document.getElementById("backgroundMusic");
+      audio.volume = 0.1;
+  function filterTable() {
+    const input = document.getElementById('search-input').value.toUpperCase();
+    const table = document.getElementById('lesson-table');
+    const rows = table.getElementsByTagName('tr');
+
+    for (let i = 0; i < rows.length; i++) {
+      const titleCell = rows[i].getElementsByTagName('td')[0];
+      if (titleCell) {
+        const title = titleCell.textContent || titleCell.innerText;
+        if (title.toUpperCase().indexOf(input) > -1) {
+          rows[i].style.display = '';
+        } else {
+          rows[i].style.display = 'none';
+        }
+      }
+    }
+  }
+</script>
+
+        <script>
+      
+   
+    typeWriter();
+
+
+
+    const openModalBtn = document.getElementById('open-modal-btn');
+      const modal = document.getElementById('modal');
+      const closeBtn = document.querySelector('.close-btn');
+
+      // Open the modal
+      openModalBtn.addEventListener('click', () => {
+        modal.style.display = 'block';
+      });
+
+      // Close the modal when the user clicks on the close button or outside the modal
+      closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      window.addEventListener('click', (event) => {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      });
+
+
+
+     
+
+
+
+
+
+
+
+    function animateCount(target, duration, spanId) {
+      const element = document.getElementById(spanId);
+      const start = 0;
+      const increment = Math.ceil(target / (duration / 10)); // Increment value for each step of the animation
+
+      let current = start;
+
+      const timer = setInterval(() => {
+        current += increment;
+        element.textContent = current;
+
+        if (current >= target) {
+          element.textContent = target;
+          clearInterval(timer);
+        }
+      }, 10); // Adjust the interval (in milliseconds) to control the speed of the animation
+    }
+
+    // Usage example
+    animateCount(8, 2000, "count1"); // Customize the target, duration, and span ID for each animateCount call
+    animateCount(200, 2000, "count2");
+    animateCount(1283926, 2000, "count3");
+    animateCount(3875, 2000, "count4");
+    animateCount(250, 2000, "count5");
+   
+        </script>
+        <script src="/cursor.js"></script>
+        <script>
+          // Get a reference to the background music audio element
+        const backgroundMusic = document.getElementById("backgroundMusic");
+        
+        // Function to play the background music
+        function playBackgroundMusic() {
+          backgroundMusic.play();
+        }
+        
+        // Add event listeners for user interactions
+        document.addEventListener("click", playBackgroundMusic);
+        document.addEventListener("keydown", playBackgroundMusic);
+         </script>
+</body>
+</html>

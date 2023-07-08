@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K A L A W A K A N - E learning</title>
+    <style>
+                @font-face {
+  font-family: "myfont";
+  src: url("modern\ M.ttf");}
+        body{
+  font-family:Roboto;
+  background:#000000;  
+  font-family: "myfont";              
+}
+
+.transition {
+  transition: all 0.2s linear;
+}
+
+.perspective_container {
+  margin-top:2%;
+  position:relative;
+  perspective: 1000px; 
+  perspective-origin: center center;
+  position:relative;
+  max-width:500px;
+  width:90%;
+}
+
+.table {
+  height: 290px;
+  width:100%;
+  backdrop-filter: blur(15px);
+  box-shadow: rgba(0, 145, 255, 0.408) 0px 5px 15px;
+    border: 3px solid rgba(213, 213, 213, 0.719);
+  border-radius:15px; 
+  transform:rotateX(25deg) rotateZ(0deg) rotateY(0deg);
+}
+
+.menu {
+  position:absolute;
+  top:16%;
+  left:-10%;
+  transform:rotateX(15deg);
+}
+
+.menu>.item {
+  position:relative; 
+  color:#ffffff;
+  background: rgba(40, 122, 255, 0.118);
+  border:solid 1px #ffffff;
+  border-radius:5px; 
+  padding:6%;
+  margin:6%;
+  transform:rotateX(15deg);
+  cursor:pointer;
+  height: 20px;
+  width: 120px;
+}
+
+.menu>.item:hover { 
+  color:#010818;
+  background:#ffffff;
+}
+
+.card {
+  padding:2%;
+  max-width:280px;
+  background: rgba(40, 122, 255, 0.07);
+  border:solid 1px #ffffff; 
+  border-radius:10px;
+  transform:rotateX(15deg);
+  height: 150px;
+  margin-top: 10%;
+}
+
+.card>p {
+  margin-top:10%;
+  color: #ffffff;
+}
+.screen{
+    display: flex;
+position: relative;
+
+    width: 900px;
+    position:relative;
+  perspective: 1000px; 
+  perspective-origin: center center;
+  animation: floats 3s ease-in-out infinite;
+    height: 400px;
+}
+@keyframes floats {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -8px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.screen1{
+    position: relative;
+    top:10%;
+    height: 330px;
+    width: 490px;
+    box-shadow: rgba(0, 145, 255, 0.408) 0px 5px 15px;
+    border: 3px solid rgba(213, 213, 213, 0.719);
+    border-radius: 10px;
+  transform: rotateY(35deg);
+  transform-style: preserve-3d;
+  backdrop-filter: blur(1px);
+color: rgba(10, 169, 255, 0.884);
+
+}
+
+
+.screen2{
+  box-shadow: rgba(0, 145, 255, 0.408) 0px 5px 15px;
+    border: 3px solid rgba(213, 213, 213, 0.719);
+    border-radius: 10px;
+    height: 360px;
+    width: 230px;
+    backdrop-filter: blur(1px);
+    transform: rotateY(-45deg);
+  transform-style: preserve-3d;
+position: relative;
+top:10%;
+    margin-left: 90px;
+}
+table {
+      border-collapse: collapse;
+      width: 400px;
+      
+    }
+    th {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid #dddddda3;
+      color:  rgb(26, 145, 213);
+      text-align: center;
+    }
+    td{
+        padding: 8px;
+      text-align: left;
+      text-align: center;
+     
+      color: #ddd;
+    }
+    h1{
+        color: #ffffff;
+
+    }
+    #num{
+        font-size: 90px;
+        font-weight: bold;
+        color:  rgb(26, 145, 213);
+    }
+
+    .users-table {
+      animation: scrollTable 20s linear infinite; 
+    max-height: 200px; /* Set a maximum height for the table */
+    overflow-y: auto; /* Add a vertical scrollbar when the table exceeds the height */
+  }
+  .users-table::-webkit-scrollbar {
+    width: 0.5em;
+  }
+
+
+  /* Hide the scrollbar thumb */
+  .users-table::-webkit-scrollbar-thumb {
+    background-color: #000;
+  }
+  .over{
+    overflow: hidden;
+  }
+  input{
+    width: 240px;
+    height: 35px;
+    margin-top: 25px;
+    background: none;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  input::placeholder{
+    text-align: center;
+    font-weight:bold ;
+  }
+  button{
+    width: 90px;
+    height: 30px;
+    margin-top: 25px;
+    background-color: rgba(0, 89, 255, 0.29);
+    color: #ddd;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  button:hover{
+    background-color: #ddd;
+    color: rgba(1, 48, 149, 0.816);
+    transition: .5s;
+  }
+  #circ{
+  margin-top: 10px;
+border: 0.5vw rgb(64, 133, 245) dashed;
+/* border-style: ; */
+background-color: transparent;
+border-radius: 50%;
+position: absolute;
+top:72%;
+left: 89%;
+right: 0;
+width: 3.5vw;
+height: 3.5vw;
+opacity: 0.8;
+font-size: 3vw;
+animation: spin 10s linear infinite;
+}
+@keyframes spin
+{
+  0% { transform: rotate(0deg) translateZ(2vw);}
+  100% { transform: rotate(360deg) translateZ(2vw);}
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.rectangle{
+    height: 80px;
+    width: 140px;
+border: 1px solid #fff;
+border-radius: 10px;
+overflow-x: hidden;
+display: flex;
+margin-left: 10%;
+box-shadow: rgba(0, 145, 255, 0.408) 0px 5px 15px;
+}
+.rectcon{
+    display: flex;
+    gap: 22px;
+    padding: 15px;
+
+}
+.num{
+    width: 50%;
+    font-size: 45px;
+    padding: 5px;
+    margin-top: 13px;
+    font-weight: bold;
+}
+.icon{
+    width: 50%;
+    background-color: rgba(45, 160, 255, 0.379);
+}
+.label1{
+  position: absolute;
+  top:41%;
+  display: flex;
+  color: #fff;
+  text-align: center;
+  margin-left: 16px;
+}
+.label2{
+  position: absolute;
+  top:41%;
+  display: flex;
+  color: #fff;
+  text-align: center;
+  margin-left: 10px;
+}
+.label3{
+  position: absolute;
+  top:77%;
+  display: flex;
+  color: #fff;
+  text-align: center;
+  margin-left: 20px;
+}
+.label4{
+  position: absolute;
+  top:77%;
+  display: flex;
+  color: #fff;
+  text-align: center;
+  margin-left: 6px;
+}
+a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 17px;
+  width: 100%;
+}
+a:hover{
+  color: #000;
+}
+.me img{
+  height: 39px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  box-shadow: rgba(0, 145, 255, 0.408) 0px 5px 15px;
+  margin-left: 29px;
+}
+    </style>
+    <link rel="stylesheet" href="/star.css">
+    <link rel="icon" type="image/x-icon" href="/i.png">
+</head>
+<body>
+  <div class="bg"></div>
+
+  <div class="star-field">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    </div>
+
+
+
+
+
+
+<center>
+
+<div class="screen">
+    <div class="screen1">
+      
+        <h1>Dashboard</h1>
+        <p style="position: absolute;font-size: 10px;left: 41%;top: 13%;">K A L A W A K A N</p>
+        <div class="rectcon">
+    <div class="rectangle">
+      <div class="num"> <%= users.length %></div><div class="icon"><img src="/user.svg" style="height: 25px;margin-top: 15px;"><div class="label1">Users</div></div>
+    </div><div class="rectangle">
+        <div class="num"><%= admin.length %></h2></div><div class="icon"><img src="/admin.svg" style="height: 25px;margin-top: 15px;"><div class="label2">Admin</div></div>
+    </div></div>
+    <div class="rectcon">
+    <div class="rectangle">
+        <div class="num">20</h2></div><div class="icon"><img src="/pd.svg" style="height: 25px;margin-top: 15px;"><div class="label3">Pdfs</div></div>
+
+    </div>
+    <div class="rectangle">
+        <div class="num">4</h2></div><div class="icon"><img src="/course.svg" style="height: 25px;margin-top: 15px;"><div class="label4">Courses</div></div>
+   </div><!-- END: Line Graph --></div>
+    </div><div class="screen2">
+      
+      <img src="/admin.svg" style="height: 140px;margin-top: 80px;   filter: drop-shadow(0 0 7px rgba(0, 98, 185, 0.645));"><p style="color:rgb(255, 255, 255);font-weight: bolder;   filter: drop-shadow(0 0 7px rgba(0, 75, 149, 0.678));">System Administrator</p>
+     
+      <div class="me" style="display: flex;">
+      <img src="/me.jpg"><div><span style="color: #fff;margin-left: 10px;filter: drop-shadow(0 0 7px rgba(0, 98, 185, 0.645));font-size: 11px;">Andrei R. Parquez</span><div class="div" style="margin-top: -6px;">
+      <span style="color: #fff;margin-left: -14px;filter: drop-shadow(0 0 7px rgba(0, 98, 185, 0.645));font-size: 11px;text-align: left;">BSIT Student</span></div>
+      <div class="div" style="margin-top: -6px;">
+        <span style="color: #fff;margin-left: -14px;filter: drop-shadow(0 0 7px rgba(0, 98, 185, 0.645));font-size: 11px;text-align: left;">21 years old</span></div>
+    </div> </div>
+    
+    
+    </div>
+      
+</div>
+
+    
+    
+        <div class="perspective_container">
+         <div class="table">
+          <div class="card slide_down">
+          <input type="text" id="search-input" placeholder="Search for Database">
+          <button onclick="filterTable()">SEARCH</button>
+          </div>
+          <div class="menu">
+            <div class="item transition1" style="background-color: #fff;color: #010818;"><a href="" style="color: #010818;">Home</a></div>  
+            <div class="item transition"><a href="/users">Users</a></Users></div>  
+            <div class="item transition"><a href="/admin1">Admin</a></div>
+           
+          </div>
+         </div>  <button id="circ" type="submit" onmouseover="playSound()" > </button>
+        </div>
+       </center>
+       <audio id="backgroundMusi" autoplay >
+        <source src="/databases.m4a" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+     
+</body>
+</html>

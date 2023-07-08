@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> K A L A W A K A N - E learning
+    </title>
+  <style>
+@font-face {
+    font-family: "myfont";
+    src: url("/modern\ M.ttf");
+  }
+  body{
+    background-color: #070110;
+  }
+  .con{
+    height: 160px;
+    width: 250px;
+   margin-left: 30px;
+   margin-right: -40px;
+  display: block;
+    transform: translate(-50%, -50%);
+  animation: floats 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px #000000a8) drop-shadow(0 0 15px #070707ab);
+
+   }
+   .main-content table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .main-content th {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+    font-size: 17px;
+    font-weight: 100;
+    white-space: nowrap;
+  }
+  .main-content td {
+    padding: 9px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    background-color: rgba(0, 128, 255, 0.044);
+  }
+  .main-content tr:hover{
+    background-color: #dddddd22;
+  }
+  .main-content a{
+    color: #fdfeff;
+  text-decoration: none;
+  position: relative;
+ 
+   
+  }
+  .main-content a img{
+    position: relative;
+    bottom: -6px;
+  }
+  .main-content th:nth-child(1), .main-content td:nth-child(1) {
+    width: 50%;
+
+
+  }
+
+  .main-content th:nth-child(2), .main-content td:nth-child(2) {
+    width: 1%;
+    text-align: center;
+  }
+
+  .main-content th:nth-child(3), .main-content td:nth-child(3) {
+    width: 5%;
+    text-align: justify;
+  }
+  .main-content th:nth-child(3){
+text-align: justify;
+  }
+
+  .main-content td img{
+    height: 25px;
+    margin-left: 10px;
+  }
+  .main-content img{
+    height: 25px;
+  }
+
+
+
+td img{
+  position: relative;
+
+}
+input{
+  color: #f1f1f1;
+  height: 45px;
+  width: 350px;
+  position: relative;
+  left: 30%;
+  border-radius: 25px;
+  border: 2px solid rgb(196, 196, 196);
+  text-align: center;
+  font-size: 16px;
+  background-color: rgba(0, 128, 255, 0.044);
+}
+input::placeholder{
+  text-align: center;
+  font-size: 16px;
+}
+button{
+  color: #070110;
+  height: 48px;
+  width: 48px;
+  position: relative;
+  left: 31%;
+  border-radius: 50%;
+  border: 3px solid rgb(3, 147, 249);
+  top: 7px;
+  border: 2px solid rgb(196, 196, 196);
+  background-color: rgba(0, 128, 255, 0.044);
+}
+button:hover{
+  background-color: #ddd;
+  transform: scale(1.1);
+  transition: .6s;
+}
+
+.courses{
+  height: 800px;
+  width: 100%;
+text-align: center;
+  display: flex;
+  padding-left: 90px ;
+   flex-wrap: wrap;
+   flex-wrap: wrap;
+  justify-content: center;
+
+}
+.ctitle{
+  width: 550px;
+  height: 60px;
+  position: absolute;
+  left: 28%;
+  text-align: center;
+  font-size: 30px;
+  padding: 15px;
+  font-weight: bold;
+  border-radius: 10px;
+  z-index: 200;
+}
+.cbox{
+  height: 200px;
+  width: 300px;
+  background-color: #070110;
+  margin-top: 15%;
+  margin-right: 60px;
+  border: 2px solid #fff;
+
+}
+.cbox2{
+  height: 200px;
+  width: 300px;
+  background-color: #070110;
+  margin-top: -3%;
+  margin-right: 60px;
+  border: 2px solid #fff;
+
+}
+.cbox img{
+  height: 200px;
+  width: 300px;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+.cbox2 img{
+  height: 200px;
+  width: 300px;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+.next:hover,.next a:hover{
+  background-color: #fff5f5da;
+  color: #000;
+}
+#swipe{
+    height: 170px;
+    position: absolute;
+    z-index: 200;
+    top: 390px;
+    left: 42%;
+    animation: moveUpDown 1s infinite;
+    opacity: 70%;
+}
+#swipe img{
+    height: 150px;
+    position: absolute;
+    z-index: 200;
+    left: 32%;
+}
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-190px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+#planets p{
+    opacity: 70%;
+}
+.hidden {
+  display: none;
+}
+.plan{
+    width: 25%;
+
+
+    margin-right: 10px;
+    text-align: center;
+    background-color: #000000b4;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    padding: 20px;
+}
+.plan img{
+    height: 150px;
+    margin-top: 15px;
+    filter: drop-shadow(0 0 7px rgb(0, 3, 6));
+}
+.plan h2{
+    color: #ffffff;
+    margin-top: 10px;
+}
+.plan p{
+    font-size: 13px;
+    text-align: left;
+    margin-left: 29px;
+}
+h1{
+    width: 500px;
+}
+  </style>
+ <link rel="icon" type="image/x-icon" href="/i.png">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/cursor.css">
+    <link rel="stylesheet" href="/solar.css">
+</head>
+<body>  <audio id="backgroundMusic" autoplay loop volume="0">
+  <source src="/bg.mp3" type="audio/mpeg" volume="0">
+  Your browser does not support the audio element.
+</audio>
+<audio id="backgroundMusi" autoplay volume="0" >
+  <source src="/solar.m4a" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+  <div class="bg"></div>
+
+  <div class="star-field">
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  </div>
+
+
+
+    <div class="sidebar">
+      <div class="logo"></div>
+        <div class="side">
+            
+        <ul>
+          <li><a href="/dashboard"><img src="/home.svg">Home</a></li>
+          <li ><a href="/courses"><img src="/note.svg">Courses</a></li>
+          <li><a href="/lessons"><img src="/p.svg">Resources</a></li>
+          <li  class="active"><a href="/solar"><img src="/planet.svg">Models</a></li>
+          <li><a href="/act"><img src="/galaxy-svgrepo-com.svg">Activities</a></li>   
+          <li><a href="/quiz"><img src="/pen-.svg">Quiz</a></li>
+          
+          <li><a href="/videos"><img src="/video.svg">Videos</a></li>
+          <li><a href="/dev"><img src="/team.svg">Devs</a></li>
+      
+        </ul></div>
+        <img src="/light.png" style="height:80px;width:300px;bottom:0;left:-40px;position:absolute;margin-bottom: 13px;">
+
+      </div>
+
+      <nav>
+        <div class="logo">
+          <img src="bot.png"><div class="tit">
+            <p>K A L A W A K A N <br>E - Learning Web</p>
+          </div>
+        </div>
+       <div class="account">
+      <p>Account</p><img src="/acc.svg" id="open-modal-btn">
+       </div>
+      </nav>
+
+
+      <div class="main-content" style="pointer-events: none;user-select: none;">
+       <div id="swipe"> <img src="/swipe.png" >
+    <p style="position:relative;top:90%">Swipe to change perspective</p></div>
+        <div class="ctitle">Model of Solar System 
+        <p style="font-size: 17px;color: #3d81ff;">K A L A W A K A N</p>
+      </div><p style="position: absolute;top: 100px;left:18%;width: 800px;text-align: center;z-index: 100;">Composition: The solar system is composed of the Sun at its center, eight planets (Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune) orbiting the Sun, numerous moons, asteroids, comets, and other celestial bodies.</p>
+      <div class="content">
+        <div class="circles">
+          <div class="mercury_circle"></div>
+          <div class="venus_circle"></div>
+          <div class="earth_circle"></div>
+          <div class="mars_circle"></div>
+          <div class="saturn_circle"></div>
+          <div class="jupiter_circle"></div>
+          <div class="uranus_circle"></div>
+          <div class="neptune_circle"></div>
+        </div>
+    
+        <div id="planets">
+          <div class="planet sun">
+          </div>
+          <div class="mercury_container">
+              <div class="gif_mercury">
+              </div>
+              <div class="shadow_mercury">
+                <div class="light"></div>
+                <div class="shadow"></div>
+              </div><p>Mercury</p>
+          </div>
+          <div class="venus_container">
+              <div class="gif_venus">
+              </div>
+              <div class="shadow_venus">
+                <div class="light"></div>
+                <div class="shadow"></div>
+              </div><p>Venus</p>
+          </div>
+          <div class="earth_moon_container">
+            <div class="earth_container">
+                <div class="gif_earth">
+                <img src="https://res.cloudinary.com/yerevan/image/upload/v1484080036/earth_saibbo.gif">
+              </div>
+              <div class="shadow_earth">
+                <div class="light"></div>
+                <div class="shadow"></div>
+                
+              </div><p>Earth</p>
+            </div>
+            <div class="moon_container">
+            
+                <div class="moon">
+                  <img src="https://res.cloudinary.com/yerevan/image/upload/v1484080036/moon_nqqsgu.gif">
+                </div>
+              </div>
+          </div>
+          <div class="mars_container">
+              <div class="gif_mars">
+              </div>
+              <div class="shadow_mars">
+                <div class="light"></div>
+                <div class="shadow"></div>
+              </div><p>Mars</p>
+          </div>
+          <div class="jupiter_container">
+              <div class="gif_jupiter">
+                <img src="https://res.cloudinary.com/yerevan/image/upload/v1484080036/jupiter_cxhuh5.gif">
+              </div>
+              <div class="shadow_jupiter">
+                <div class="light"></div>
+                <div class="shadow"></div>
+              </div><p>Jupiter</p>
+          </div>
+          <div class="saturn_ring_container">
+            <div class="saturn_container">
+              <div class="gif_saturn">
+                <img src="https://res.cloudinary.com/yerevan/image/upload/v1484080036/jupiter_cxhuh5.gif">
+              </div>
+              <div class="shadow_saturn">
+                <div class="light"></div>
+                <div class="shadow"></div>
+              </div><p>Saturn</p>
+            </div>
+            <div class="ring_container">
+              <div class="gif_ring">
+                <div>
+                  <img src="https://res.cloudinary.com/yerevan/image/upload/v1484080037/ring_zofwhd.png">
+                </div>
+                <div>
+                  <img src="https://res.cloudinary.com/yerevan/image/upload/v1484080037/ring_zofwhd.png">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="uranus_container">
+              <div class="gif_uranus">
+              </div>
+              <div class="shadow_uranus">
+                <div class="light"></div>
+                <div class="shadow"></div>
+              </div><p>Uranus</p>
+          </div>
+          <div class="neptune_container">
+              <div class="gif_neptune">
+              </div>
+              <div class="shadow_neptune">
+                <div class="light"></div>
+                <div class="shadow"></div>
+              </div><p style="text-align: center;">Neptune</p>
+          </div>
+        </div>
+      
+      <div class="controls">
+          <button id="stop">Stop</button>
+          <button id="start">Start</button>
+        <p>Grab and move mouse verticaly to change perspective</p>
+      </div>
+    <p style="position: absolute;top:640px;z-index: 100;left: 160px;">The planets in our solar system can be divided into two main categories based on their characteristics and composition:</p>
+      </div>
+
+<br>
+      <h1 >Terrestrial Planets (<span style="color: #3377ff;">Inner Planets</span>):</h1><br>
+<div class="planetscon" style="display: flex; width: 100%;">
+    <div class="plan">
+        <h2>Mercury</h2>
+        <img src="/mercury.png">
+<p style="text-align: left;color: #3377ff;margin-top: 19px;font-size: 17px;font-weight: bold;margin-left: 0px;">Orbital Characteristics:</p>
+<p>* Aphelion: 0.466 697 AU</p>
+<p>* Orbital period: 0.240 846 yr</p>
+<p>* Perihelion: 0.307 499 AU</p>
+<p>* Satellites: None</p>
+
+<p style="text-align: left;color: #3377ff;margin-top: 9px;font-size: 17px;font-weight: bold;margin-left: 0px;">Physical Characteristics:</p>
+<p>* Mean radius: 2,439.7 km</p>
+<p>* Surface area: 7.48×107 km2</p>
+<p>* Volume: 6.083×1010 km3</p>
+<p>* Mass: 3.3011×1023 kg</p>
+<p>* Surface gravity: 3.7 m/s2</p>
+
+<p style="text-align: left;color: #3377ff;margin-top: 9px;font-size: 17px;font-weight: bold;margin-left: 0px;">Atmosphere Composition(Volume):</p>
+<p>* 42% molecular oxygen</p>
+<p>* 29.0% sodium</p>
+<p>* 22.0% hydrogen</p>
+<p>* 0.5% potassium
+    Trace amounts of argon,
+    nitrogen,
+    carbon dioxide,
+    water vapor,
+    xenon, krypton,
+    and neon.</p>
+    <p>* 6.0% helium</p>
+
+    </div> 
+    <div class="plan">
+        <h2>Venus</h2>
+        <img src="/venus.png">
+        <p style="text-align: left;color: #3377ff;margin-top: 19px;font-size: 17px;font-weight: bold;margin-left: 0px;">Orbital Characteristics:</p>
+        <p>* Aphelion: 0.728213 AU
+           <p>*  Perihelion: 0.718440 AU
+           <p>* Orbital period: 0.615198 yr
+            <p>* Satellites: None</p>
+        <p style="text-align: left;color: #3377ff;margin-top: 9px;font-size: 17px;font-weight: bold;margin-left: 0px;">Physical Characteristics:</p>
+        <p>* Mean radius: 6,051.8 km
+           <p>* Surface area: 4.6023×108 km2
+           <p>* Volume: 9.2843×1011 km3
+           <p>* Mass: 4.8675×1024 kg
+            <p>* Surface gravity: 8.87 m/s2 </p>
+        <p style="text-align: left;color: #3377ff;margin-top: 9px;font-size: 17px;font-weight: bold;margin-left: 0px;">Atmosphere Composition(Volume):</p>
+        <p>* ≈96.5% carbon dioxide
+           <p>* ≈3.5% nitrogen
+            <p>* 0.015% sulfur dioxide
+            <p>* 0.007% argon
+            <p>* 0.002% water vapour
+            <p> * 0.0017% carbon monoxide
+                <p> * 0.0012% helium
+                    <p>* 0.0007% neon
+                       Trace amounts of
+            carbonyl sulfide,
+            hydrogen chloride,
+            hydrogen fluoride.</p>
+    </div> 
+    <div class="plan">
+        <h2>Earth</h2>
+        <img src="/earth.png">
+        <p style="text-align: left;color: #3377ff;margin-top: 19px;font-size: 17px;font-weight: bold;margin-left: 0px;">Orbital Characteristics:</p>
+        <p>*Aphelion: 152,100,000 km
+           <p>* Perihelion:147,095,000 km
+            <p>* Orbital period: 365.256 days
+                <p>* Satellites:
+                    <p> Moon
+                        <p> 1305 operational
+            artificial satellites</p>
+        <p style="text-align: left;color: #3377ff;margin-top: 9px;font-size: 17px;font-weight: bold;margin-left: 0px;">Physical Characteristics:</p>
+        <p>* Mean radius: 6,371.0 km
+            <p>* Surface area: 510,072,000 km2
+            <p>* Volume: 1.08321×1012 km3
+                <p> * Mass: 5.97237×1024 kg
+                    <p>* Surface gravity: 9.807 m/s2</p>
+        <p style="text-align: left;color: #3377ff;margin-top: 9px;font-size: 17px;font-weight: bold;margin-left: 0px;">Atmosphere Composition(Volume):</p>
+        <p>*78.08% nitrogen
+            <p>*  20.95% oxygen
+                <p>* 0.930% argon
+                    <p>* 0.039% carbon dioxide
+                        <p>* ~ 1% water vapor
+            (climate-variable)</p>
+    </div> 
+    <div class="plan">
+        <h2>Mars</h2>
+        <img src="/mars.png">
+        <p style="text-align: left;color: #3377ff;margin-top: 19px;font-size: 17px;font-weight: bold;margin-left: 0px;">Orbital Characteristics:</p>
+        <p>* Aphelion: 1.6660 AU
+            <p>*  Perihelion: 1.3814 AU
+                <p>* Orbital period: 686.971 days
+                    <p>* Satellites:
+            Phobos
+            Deimos</p>
+        <p style="text-align: left;color: #3377ff;margin-top: 9px;font-size: 17px;font-weight: bold;margin-left: 0px;">Physical Characteristics:</p>
+        <p>* Mean radius: 3,389.5 km
+            <p>*   Surface area: 144,798,500 km2
+                <p>* Volume: 1.6318×1011 km3
+                    <p>*  Mass: 6.4171×1023 kg
+                        <p>*   Surface gravity: 3.711 m/s2</p>
+        <p style="text-align: left;color: #3377ff;margin-top: 9px;font-size: 17px;font-weight: bold;margin-left: 0px;">Atmosphere Composition(Volume):</p>
+        <p>* 95.97% carbon dioxide
+            <p>*   1.93% argon
+                <p>*    1.89% nitrogen
+                    <p>*   0.146% oxygen
+                        <p>*  0.0557% carbon monoxide
+                            <p>*  210 ppm Water Vapor</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<br><br>
+<br><br>
+<h1 >Gas Giant Planets (<span style="color: #3377ff;">Outer Planets</span>):</h1><br>
+<div class="planetscon" style="display: flex; width: 100%;">
+    <div class="plan">
+        <h2>Jupiter</h2>
+        <img src="/jupiter.png">
+        <p style="text-align: left;color: #3377ff;margin-top: 19px;font-size: 17px;font-weight: bold;margin-left: 0px;">Orbital Characteristics:</p>
+        <p>* Aphelion: 5.45492 AU
+            <p>*  Perihelion: 4.95029 AU
+                <p>*  Orbital period: 11.8618 yr
+                    <p>*  Known Satellites: 67.
+                        <p>*   Top 10:
+                            <p>  Ganymede
+                                <p>  Callisto
+                                    <p>   Io
+                                        <p> Europa
+                                            <p> Himalia
+                                                <p>  Amalthea
+                                                    <p> Elara
+                                                        <p>  Thebe
+                                                            <p>   Pasiphae
+                                                                <p> Carme </p>
+        <p style="text-align: left;color: #3377ff;margin-top: 9px;font-size: 17px;font-weight: bold;margin-left: 0px;">Physical Characteristics:</p>
+        <p>* Mean radius: 69,911 km
+            <p>*    Surface area: 6.1419×1010 km2
+                <p>*  Volume: 1.4313×1015 km3
+                    <p>*  Mass: 1.8986×1027 kg
+                        <p>*  Surface gravity: 24.79 m/s2 </p>
+        <p style="text-align: left;color: #3377ff;margin-top: 9px;font-size: 17px;font-weight: bold;margin-left: 0px;">Atmosphere Composition(Volume):</p>
+        <p>* 89.8% hydrogen
+            <p>*    10.2% helium
+                <p>*    ≈0.3% methane
+                    <p>*   ≈ 0.026% ammonia
+                        <p>*   ≈0.003% hydrogen deuteride
+                            <p>*   0.0006% ethane
+                                <p>*    0.0004% water </p>
+    </div> 
+    <div class="plan">
+        <h2>Saturn</h2>
+        <img src="/saturn.png">
+        <p style="text-align: left;color: #3377ff;margin-top: 19px;font-size: 17px;font-weight: bold;margin-left: 0px;">Orbital Characteristics:</p>
+        <p>* Aphelion: 10.086 AU
+            <p>*    Perihelion: 9.024 AU
+                <p>*   Orbital period: 29.4571 yr
+                    <p>*  Known Satellites: 62
+                        <p>*  Top 5:
+                            <p>  Titan
+                                <p>  Lapetus
+                                    <p>  Rhea
+                                        <p>  Dione
+                                            <p> Tethys </p>
+        <p style="text-align: left;color: #3377ff;margin-top: 9px;font-size: 17px;font-weight: bold;margin-left: 0px;">Physical Characteristics:</p>
+        <p>* Mean radius: 58,232 km
+            <p>*   Surface area: 4.27×1010 km2
+                <p>* Volume: 8.2713×1014 km3
+                    <p>* Mass: 5.6836×1026 kg
+                        <p>* Surface gravity: 10.44 m/s2 </p>
+        <p style="text-align: left;color: #3377ff;margin-top: 9px;font-size: 17px;font-weight: bold;margin-left: 0px;">Atmosphere Composition(Volume):</p>
+        <p>* ≈96% hydrogen
+            <p>*   ≈3% helium
+                <p>*   ≈0.4% methane
+                    <p>*   ≈0.01% ammonia(NH3)
+                        <p>*   ≈0.01% hydrogen deuteride(HD)
+                            <p>*   0.0007% ethane(C2H6)</p>
+    </div> 
+    <div class="plan">
+        <h2>Uranus</h2>
+        <img src="/uranus.png">
+        <p style="text-align: left;color: #3377ff;margin-top: 19px;font-size: 17px;font-weight: bold;margin-left: 0px;">Orbital Characteristics:</p>
+        <p>* Aphelion: 20.11 AU
+            <p>*  Perihelion: 18.33 AU
+                <p>* Orbital period: 84.0205 yr
+                    <p>* Known Satellites: 27
+                        <p>* Top 5:
+                            <p>  Titania
+                                <p> Miranda
+                                    <p> Ariel
+                                        <p> Umbriel
+                                            <p> Oberon</p>
+        <p style="text-align: left;color: #3377ff;margin-top: 9px;font-size: 17px;font-weight: bold;margin-left: 0px;">Physical Characteristics:</p>
+        <p>* Mean radius: 25,362 km
+            <p>*   Surface area:8.1156×109 km2
+                <p>*   Volume: 6.833×1013 km3
+                    <p>*   Mass: 8.6810x1025 kg
+                        <p>*  Surface gravity: 8.69 m/s2</p>
+        <p style="text-align: left;color: #3377ff;margin-top: 9px;font-size: 17px;font-weight: bold;margin-left: 0px;">Atmosphere Composition(Volume):</p>
+        <p>* 83% hydrogen(H2)
+            <p>*    15% helium(He)
+                <p>*   2.3% methane(CH4)
+            <p>*   0.009% hydrogen deuteride(HD)</p>
+    </div>
+
+    <div class="plan">
+        <h2>Neptune</h2>
+        <img src="/neptune.png">
+<p style="text-align: left;color: #3377ff;margin-top: 19px;font-size: 17px;font-weight: bold;margin-left: 0px;">Orbital Characteristics:</p>
+<p>* Aphelion: 30.33 AU
+    <p>*   Perihelion: 29.81 AU
+        <p>*  Orbital period: 164.8 yr
+            <p>*  Known Satellites: 14
+                <p>*  Top 5:
+                    <p> Triton
+                        <p> Naiad
+                            <p> Thalassa
+                                <p> Despina
+                                    <p> Galatea
+  </p>
+
+<p style="text-align: left;color: #3377ff;margin-top: 9px;font-size: 17px;font-weight: bold;margin-left: 0px;">Physical Characteristics:</p>
+<p>* Mean radius: 24,622 km
+    <p>*  Surface area:7.6183×109 km2
+        <p>*  Volume: 6.254×1013 km3
+            <p>*  Mass: 1.0243×1026 kg
+                <p>*  Surface gravity: 11.15 m/s2</p>
+
+<p style="text-align: left;color: #3377ff;margin-top: 9px;font-size: 17px;font-weight: bold;margin-left: 0px;">Atmosphere Composition(Volume):</p>
+<p>* 80% hydrogen(H2)
+    <p>*   19% helium(He)
+        <p>*  1.5% methane(CH4)
+            <p>* ~0.019% hydrogen deuteride(HD) </p>
+
+    </div> 
+
+
+        </div>
+
+
+
+
+
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="logout">
+              <img src="/bot.png"><div class="infos"><p>Username: Andrei</p><p>LearnerID: 12345678</p></div>
+            </div>
+            <button>LOG OUT</button> <button id="circ" type="submit" onmouseover="playSound()" > </button>
+          </div>
+          <img src="/light.png" style="height: 170px;width:520px;position: absolute;left:33%;top:51%;margin-bottom:30px;">
+        </div>
+        <br><br><br><br><br><br><br>
+
+
+
+
+     
+
+        </div>
+        
+<script>
+   var audio = document.getElementById("backgroundMusic");
+      audio.volume = 0.1;
+      setTimeout(function() {
+  var myDiv = document.getElementById("swipe");
+  myDiv.classList.add("hidden");
+}, 7000);
+    
+</script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script  src="/solar.js"></script>
+
+        <script>
+
+    const openModalBtn = document.getElementById('open-modal-btn');
+      const modal = document.getElementById('modal');
+      const closeBtn = document.querySelector('.close-btn');
+
+      // Open the modal
+      openModalBtn.addEventListener('click', () => {
+        modal.style.display = 'block';
+      });
+
+      // Close the modal when the user clicks on the close button or outside the modal
+      closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      window.addEventListener('click', (event) => {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      });
+
+
+
+     
+
+   
+        </script>
+        <script src="/cursor.js"></script>
+        <script>
+          // Get a reference to the background music audio element
+        const backgroundMusic = document.getElementById("backgroundMusic");
+        
+        // Function to play the background music
+        function playBackgroundMusic() {
+          backgroundMusic.play();
+        }
+        
+        // Add event listeners for user interactions
+        document.addEventListener("click", playBackgroundMusic);
+        document.addEventListener("keydown", playBackgroundMusic);
+         </script>
+</body>
+</html>
