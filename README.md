@@ -1,3 +1,3 @@
 # Kalawakan-E-Learning
 
-![](System ss.png)
+![](system ss.png)
